@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/vgm-atmos-outer.mp3-da92713d26cd4c471372a524aa209094.mp3str"
+
+[deps]
+
+source_file="res://ludum-dare-submission/Audio/vgm-atmos-outer.mp3"
+dest_files=[ "res://.import/vgm-atmos-outer.mp3-da92713d26cd4c471372a524aa209094.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

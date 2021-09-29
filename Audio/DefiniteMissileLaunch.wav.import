@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DefiniteMissileLaunch.wav-396df698c6c0d60c33d9317d49e0fa70.sample"
+
+[deps]
+
+source_file="res://ludum-dare-submission/Audio/DefiniteMissileLaunch.wav"
+dest_files=[ "res://.import/DefiniteMissileLaunch.wav-396df698c6c0d60c33d9317d49e0fa70.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
