@@ -19,9 +19,10 @@ func _input(event):
 		main.visible = true
 		settings.visible = false
 		for child in main.get_children():
-			child.disabled = false
+			if child is Button: child.disabled = false
 		for child in settings.get_children():
-			child.disabled = true
+			if child is Button: child.disabled = true
+			if child is HSlider: child.editable = false
 		
 # Main screen calls
 func _on_Quit_pressed():
