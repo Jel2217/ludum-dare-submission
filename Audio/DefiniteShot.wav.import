@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/DefiniteShot.wav-e6362d5ef62cbca4a13dd8a5879337da.sample"
+path="res://.import/DefiniteShot.wav-baf42f9fdee19b585759ca7ab8178981.sample"
 
 [deps]
 
-source_file="res://ludum-dare-submission/Audio/DefiniteShot.wav"
-dest_files=[ "res://.import/DefiniteShot.wav-e6362d5ef62cbca4a13dd8a5879337da.sample" ]
+source_file="res://Audio/DefiniteShot.wav"
+dest_files=[ "res://.import/DefiniteShot.wav-baf42f9fdee19b585759ca7ab8178981.sample" ]
 
 [params]
 

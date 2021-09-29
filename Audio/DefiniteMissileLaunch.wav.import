@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/DefiniteMissileLaunch.wav-396df698c6c0d60c33d9317d49e0fa70.sample"
+path="res://.import/DefiniteMissileLaunch.wav-978b7de0e5645353399dea56c5efbd31.sample"
 
 [deps]
 
-source_file="res://ludum-dare-submission/Audio/DefiniteMissileLaunch.wav"
-dest_files=[ "res://.import/DefiniteMissileLaunch.wav-396df698c6c0d60c33d9317d49e0fa70.sample" ]
+source_file="res://Audio/DefiniteMissileLaunch.wav"
+dest_files=[ "res://.import/DefiniteMissileLaunch.wav-978b7de0e5645353399dea56c5efbd31.sample" ]
 
 [params]
 

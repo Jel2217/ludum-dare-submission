@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/vgm-atmos-outer.mp3-da92713d26cd4c471372a524aa209094.mp3str"
+path="res://.import/vgm-atmos-outer.mp3-73f516a2427d5eb00ff2dcefa4f33154.mp3str"
 
 [deps]
 
-source_file="res://ludum-dare-submission/Audio/vgm-atmos-outer.mp3"
-dest_files=[ "res://.import/vgm-atmos-outer.mp3-da92713d26cd4c471372a524aa209094.mp3str" ]
+source_file="res://Audio/vgm-atmos-outer.mp3"
+dest_files=[ "res://.import/vgm-atmos-outer.mp3-73f516a2427d5eb00ff2dcefa4f33154.mp3str" ]
 
 [params]
 
