@@ -1,5 +1,16 @@
 extends KinematicBody2D
 
+
+# Healthbar
+var green_bar = preload("res://Images/UI/EnemyHealthBar/greenbar.png")
+var red_bar = preload("res://Images/UI/EnemyHealthBar/redbar.png")
+var yellow_bar = preload("res://Images/UI/EnemyHealthBar/yellowbar.png")
+onready var healthbar = $Healthbar
+
+var max_health = 100
+var health = 100
+
+
 var move_speed = 100
 var speed = 100
 onready var nav =  get_node("/root/Control/Level/Navigation2D")
@@ -15,10 +26,18 @@ var enemy_stopping_distance = 20
 enum states {IDLE, ATTACKING, MOVING}
 var state = states.MOVING
 
+func _ready():
+	healthbar.hide()
+	health = max_health
+	healthbar.max_value = max_health
+
+
 func _physics_process(_delta):
+	if health <= 0:
+		queue_free()
 	if Input.is_action_pressed("test"):
 		pass
-	
+	print(health)
 	match state:
 		states.IDLE:
 			pass
@@ -48,4 +67,13 @@ func pathfind_to(location):
 	print((location - position).length())
 	if (location - position).length() < enemy_stopping_distance:
 		return true
-	
+
+func update_healthbar(value):
+	healthbar.texture_progress = green_bar
+	if value < healthbar.max_value * 0.7:
+		healthbar.texture_progress = yellow_bar
+	if value < healthbar.max_value * 0.35:
+		healthbar.texture_progress = red_bar
+	if value < healthbar.max_value:
+		healthbar.show()
+	healthbar.value = value
