@@ -1,16 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Images/Player/playeranim2.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Images/Player/playeranim4.png" type="Texture" id=3]
 [ext_resource path="res://Images/Player/playeranim3.png" type="Texture" id=4]
 [ext_resource path="res://Images/Player/playeranim1.png" type="Texture" id=5]
+[ext_resource path="res://Images/Player/laser_sword.png" type="Texture" id=6]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 4.62023
-height = 5.85739
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
@@ -23,14 +20,25 @@ animations = [ {
 "speed": 6.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.62023
+height = 5.85739
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "moving"
+frame = 3
+playing = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0787277, -0.0787449 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "moving"
-playing = true
+[node name="laser_sword" type="Sprite" parent="."]
+rotation = -6.38791
+texture = ExtResource( 6 )
+offset = Vector2( 0, 15 )
+flip_v = true

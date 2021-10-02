@@ -28,3 +28,5 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	$laser_sword.look_at(get_global_mouse_position())
+	$laser_sword.rotation_degrees -= 90
