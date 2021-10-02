@@ -56,6 +56,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GridBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ClipControl"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 526.0
 margin_right = 620.0
@@ -64,3 +71,5 @@ size_flags_horizontal = 3
 texture_normal = ExtResource( 3 )
 expand = true
 stretch_mode = 5
+
+[node name="Tween" type="Tween" parent="."]
