@@ -99,3 +99,9 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InvisTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="InvisTimer" to="." method="_on_InvisTimer_timeout"]
