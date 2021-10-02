@@ -9,7 +9,7 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
-"speed": 20.0
+"speed": 10.0
 } ]
 
 [node name="Control" type="Control"]

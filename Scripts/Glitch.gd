@@ -10,12 +10,12 @@ func _ready():
 
 func _on_Timer_timeout():
 	i = i + 1
-	rand = round(rand_range(0,100))
+	rand = round(rand_range(0,50))
 	print(rand)
-	if rand >= 70 and i<14 and i>2:
+	if rand == 1   and i<130 and i>20:
 		print("tumble")
 		self.play("FallOff")
-		i = 14
-	if i >= 15:
+		i = 140
+	if i >= 150:
 		queue_free()
 	
