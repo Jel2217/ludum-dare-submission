@@ -4,20 +4,28 @@ var move_speed = 100
 var speed = 100
 onready var nav =  get_node("/root/Level/Navigation2D")
 onready var player =  get_node("/root/Level/Player")
+onready var line =  get_node("/root/Level/Line")
 var path
 var points
 var points_index = 0
 var velocity = Vector2.ZERO
-
+var epsilon = 1
 
 func _physics_process(delta):
-	print(points_index)
 	if Input.is_action_pressed("test"):
-		print("y")
-		points = nav.get_simple_path(player.position, position)
+		points_index = 0
+		points = nav.get_simple_path(position, player.position, true)
+		line.set_points(points)
+	
 	if !points: return
+	print(points.size())
+	if points_index>=points.size():
+		return
 	var target = points[points_index]
-	if position.distance_to(target) < 1:
-		target = points[points_index + 1]
+	if position.distance_to(target) < epsilon:
+		points_index = points_index + 1
+		if points_index>=points.size():
+			return
+		target = points[points_index]
 	velocity = (target - position).normalized() * move_speed
 	velocity = move_and_slide(velocity)
