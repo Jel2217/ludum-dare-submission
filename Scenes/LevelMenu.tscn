@@ -91,4 +91,6 @@ stretch_mode = 5
 [node name="Tween" type="Tween" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="level_selected" from="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space/LevelGrid" to="." method="_on_LevelGrid_level_selected"]
+[connection signal="level_selected" from="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space2/LevelGrid2" to="." method="_on_LevelGrid2_level_selected"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_NextButton_pressed"]

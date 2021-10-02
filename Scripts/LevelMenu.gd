@@ -17,7 +17,7 @@ func _ready():
 			for box in grid.get_children():
 				var num = box.get_position_in_parent() + 1 + 18 * grid.get_position_in_parent()
 				box.level_num = num
-				box.locked = num > 34
+				box.locked = num > 1
 
 func _on_BackButton_pressed():
 	if current_grid > 1:
@@ -37,3 +37,15 @@ func _on_NextButton_pressed():
 				0.5, Tween.TRANS_BACK, Tween.EASE_OUT)
 		tween.start()
 	
+
+
+func _on_LevelGrid_level_selected(level):
+	select_level(level)
+
+
+func _on_LevelGrid2_level_selected(level):
+	select_level(level)
+	
+func select_level(level):
+	if level == 1:
+		get_tree().change_scene("res://Scenes/Levels/Level-1.tscn")
