@@ -84,10 +84,10 @@ __meta__ = {
 
 [node name="Wave" type="TextureRect" parent="."]
 material = SubResource( 5 )
-margin_left = 32000.0
-margin_top = 18000.0
-margin_right = 96000.0
-margin_bottom = 54000.0
+margin_left = -32000.0
+margin_top = -18000.0
+margin_right = 32000.0
+margin_bottom = 18000.0
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {

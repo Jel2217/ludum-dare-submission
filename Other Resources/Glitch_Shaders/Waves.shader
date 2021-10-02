@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
-uniform float frequency = 120;
-uniform float depth = 0.005;
+uniform float frequency = 30;
+uniform float depth = 0.5;
 
 void fragment() {
 	vec2 uv = SCREEN_UV;
