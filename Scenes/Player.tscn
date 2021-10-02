@@ -24,7 +24,9 @@ animations = [ {
 radius = 5.7717
 height = 2.78917
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -43,3 +45,5 @@ position = Vector2( 0, 5 )
 texture = ExtResource( 6 )
 offset = Vector2( 0, 12 )
 flip_v = true
+
+[node name="Muzzle" type="Node2D" parent="Pivot/laser_sword"]
