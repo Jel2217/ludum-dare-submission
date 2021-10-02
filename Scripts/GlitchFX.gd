@@ -22,8 +22,6 @@ func deepfried(set):
 func wave(set):
 	get_node("Wave").visible = set
 
-func old(set):
-	get_node("Ye Olde").visible = set
 
 #func _process(_delta):
 	#print(camera.name)
