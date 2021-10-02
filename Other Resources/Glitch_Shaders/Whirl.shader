@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float rotation = 3.0;
+uniform float rotation = 0.5;
 
 void fragment() {
 	vec2 uv = SCREEN_UV;
