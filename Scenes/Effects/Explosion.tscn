@@ -14,7 +14,7 @@ gradient = SubResource( 1 )
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 300.0
+initial_velocity = 100.0
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
@@ -22,16 +22,20 @@ linear_accel = 8.76
 linear_accel_random = 1.0
 damping = 100.0
 damping_random = 0.5
-scale = 5.0
+scale = 2.0
+scale_random = 1.0
 color_ramp = SubResource( 2 )
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 221.261
+radius = 35.285
 
 [node name="Explosion" type="Particles2D"]
 emitting = false
 amount = 1000
+lifetime = 0.5
 one_shot = true
+explosiveness = 0.4
+randomness = 0.2
 process_material = SubResource( 3 )
 script = ExtResource( 2 )
 
@@ -39,6 +43,8 @@ script = ExtResource( 2 )
 stream = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 4 )
