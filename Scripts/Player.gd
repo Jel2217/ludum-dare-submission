@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var speed = 200
+var speed = 150
 
 var velocity = Vector2.ZERO
 onready var sprite = $AnimatedSprite
@@ -18,6 +18,11 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('up'):
 		velocity.y -= 1
+	if velocity == Vector2.ZERO:
+		sprite.play("idle")
+	else:
+		sprite.play("moving")
+
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
