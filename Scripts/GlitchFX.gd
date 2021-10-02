@@ -2,6 +2,7 @@ tool
 
 extends Control
 
+#onready var camera = get_parent().get_node("Player/Camera2D")
 
 func _ready():
 	pass # Replace with function body.
@@ -24,3 +25,6 @@ func wave(set):
 func old(set):
 	get_node("Ye Olde").visible = set
 
+#func _process(_delta):
+	#print(camera.name)
+	#self.position = camera.position
