@@ -11,7 +11,7 @@ var max_health = 100
 var health = 100
 
 
-var move_speed = 100
+var move_speed = 7500
 var speed = 100
 onready var nav =  get_node("/root/Control/Level/Navigation2D")
 onready var player =  get_node("/root/Control/Level/Player")
