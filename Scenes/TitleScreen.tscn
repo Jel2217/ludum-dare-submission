@@ -80,16 +80,16 @@ __meta__ = {
 }
 
 [node name="Main" type="VBoxContainer" parent="."]
-margin_left = 86.0
-margin_top = 47.0
-margin_right = 359.0
-margin_bottom = 287.0
+margin_left = 80.0
+margin_top = 50.0
+margin_right = 560.0
+margin_bottom = 310.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Main"]
-margin_right = 273.0
+margin_right = 480.0
 margin_bottom = 57.0
 custom_fonts/font = ExtResource( 1 )
 text = "videogame"
@@ -97,7 +97,7 @@ align = 1
 
 [node name="Play" type="Button" parent="Main"]
 margin_top = 61.0
-margin_right = 273.0
+margin_right = 480.0
 margin_bottom = 118.0
 focus_mode = 0
 custom_styles/hover = SubResource( 1 )
@@ -111,7 +111,7 @@ text = "Play"
 
 [node name="Settings" type="Button" parent="Main"]
 margin_top = 122.0
-margin_right = 273.0
+margin_right = 480.0
 margin_bottom = 179.0
 focus_mode = 0
 custom_styles/hover = SubResource( 6 )
@@ -125,7 +125,7 @@ text = "Settings"
 
 [node name="Quit" type="Button" parent="Main"]
 margin_top = 183.0
-margin_right = 273.0
+margin_right = 480.0
 margin_bottom = 240.0
 focus_mode = 0
 custom_styles/hover = SubResource( 11 )
