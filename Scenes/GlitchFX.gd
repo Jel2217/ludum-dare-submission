@@ -1,11 +1,5 @@
 extends Control
-export bool  = false
-export bool  = false
-export bool  = false
-export bool  = false
-export bool  = false
-export bool  = false
-export bool  = false
+
 
 # Declare member variables here. Examples:
 # var a = 2
