@@ -1,8 +1,8 @@
 extends MarginContainer
 
-var num_grids = 1
+var num_grids = 2
 var current_grid = 1
-var grid_width = 710
+var grid_width = 425
 
 onready var gridbox = $VBoxContainer/HBoxContainer/ClipControl/GridBox
 onready var tween = $Tween
