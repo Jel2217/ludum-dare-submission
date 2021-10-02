@@ -2,6 +2,8 @@ extends Control
 	
 var explosion = preload("res://Scenes/Effects/Explosion.tscn")
 var player = get_tree().get_root().get_node("Player")
+var enemy = preload("res://Scenes/Enemy1.tscn")
+var numEnemies = 3
 export var x = 10
 export var y = 10
 func invert(set):
@@ -28,6 +30,16 @@ func explosions():
 func invis():
 	player.hide()
 	$InvisTimer.start()
+
+func teleport():
+	player.position = generate_random_pos()
+
+func enemy():
+	for i in numEnemies:
+		var e = enemy.instance()
+		enemy.position = generate_random_pos()
+		
+	
 
 func generate_random_pos():
 	var x_off = rand_range(-x,x)
