@@ -2,7 +2,7 @@ extends MarginContainer
 
 var num_grids = 1
 var current_grid = 1
-var grid_width = 710
+var grid_width = 590
 
 onready var gridbox = $VBoxContainer/HBoxContainer/ClipControl/GridBox
 onready var tween = $Tween
@@ -12,11 +12,12 @@ func _ready():
 	# Replace with your game's level/unlocks/etc.
 	# You can also connect the "level_selected" signals
 	num_grids = gridbox.get_child_count()
-	for grid in gridbox.get_children():
-		for box in grid.get_children():
-			var num = box.get_position_in_parent() + 1 + 18 * grid.get_position_in_parent()
-			box.level_num = num
-			box.locked = num > 34
+	for space in gridbox.get_children():
+		for grid in space.get_children():
+			for box in grid.get_children():
+				var num = box.get_position_in_parent() + 1 + 18 * grid.get_position_in_parent()
+				box.level_num = num
+				box.locked = num > 34
 
 func _on_BackButton_pressed():
 	if current_grid > 1:

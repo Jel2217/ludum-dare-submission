@@ -12,11 +12,9 @@ __meta__ = {
 [node name="TextureRect" type="ColorRect" parent="."]
 margin_right = 640.0
 margin_bottom = 360.0
-color = Color( 0.0156863, 0, 0.470588, 1 )
+color = Color( 0.682353, 0.67451, 0.615686, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LevelMenu" parent="." instance=ExtResource( 1 )]
-margin_right = 640.0
-margin_bottom = 360.0

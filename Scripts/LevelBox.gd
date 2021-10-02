@@ -23,3 +23,11 @@ func _on_LevelBox_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		print("Clicked level ", level_num)
 		emit_signal("level_selected", level_num)
+
+
+func _on_LevelBox_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_LevelBox_mouse_exited():
+	pass # Replace with function body.

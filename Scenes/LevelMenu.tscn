@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/LevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Font/fontt.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Images/arrowRight copy.png" type="Texture" id=3]
 [ext_resource path="res://Images/arrowLeft copy.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/ClipControl.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/LevelGrid.tscn" type="PackedScene" id=6]
 
 [node name="LevelMenu" type="MarginContainer"]
 margin_right = 640.0
@@ -39,7 +41,7 @@ margin_bottom = 340.0
 size_flags_vertical = 3
 
 [node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_right = 93.0
+margin_right = 126.0
 margin_bottom = 233.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )
@@ -47,24 +49,39 @@ expand = true
 stretch_mode = 5
 
 [node name="ClipControl" type="Control" parent="VBoxContainer/HBoxContainer"]
-margin_left = 97.0
-margin_right = 522.0
+margin_left = 130.0
+margin_right = 506.0
 margin_bottom = 233.0
-rect_min_size = Vector2( 425, 0 )
-rect_clip_content = true
+rect_min_size = Vector2( 360, 0 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ClipControl"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 852.0
+margin_bottom = 210.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Space" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox"]
+margin_right = 546.0
+margin_bottom = 210.0
+custom_constants/margin_right = 194
+
+[node name="LevelGrid" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space" instance=ExtResource( 6 )]
+margin_left = -10.0
+
+[node name="Space2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox"]
+margin_left = 550.0
+margin_right = 902.0
+margin_bottom = 210.0
+
+[node name="LevelGrid2" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space2" instance=ExtResource( 6 )]
+
 [node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_left = 526.0
+margin_left = 494.0
 margin_right = 620.0
 margin_bottom = 233.0
 size_flags_horizontal = 3
@@ -73,3 +90,6 @@ expand = true
 stretch_mode = 5
 
 [node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_NextButton_pressed"]
