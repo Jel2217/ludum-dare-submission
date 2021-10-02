@@ -113,10 +113,6 @@ script = ExtResource( 7 )
 [node name="Enemy" parent="Level" instance=ExtResource( 3 )]
 position = Vector2( 75.9604, -45.7502 )
 
-[node name="Line" type="Line2D" parent="Level"]
-width = 1.0
-default_color = Color( 0, 0, 0, 1 )
-
 [node name="ShaderPos" type="Position2D" parent="."]
 
 [node name="Glitches" parent="ShaderPos" instance=ExtResource( 6 )]
