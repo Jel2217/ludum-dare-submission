@@ -5,11 +5,12 @@ extends KinematicBody2D
 var green_bar = preload("res://Images/UI/EnemyHealthBar/greenbar.png")
 var red_bar = preload("res://Images/UI/EnemyHealthBar/redbar.png")
 var yellow_bar = preload("res://Images/UI/EnemyHealthBar/yellowbar.png")
+var splat = preload("res://Scenes/Effects/Splat.tscn")
 onready var healthbar = $Healthbar
 
 var max_health = 100
 var health = 100
-
+var dead = false
 
 var move_speed = 7500
 var speed = 100
@@ -46,7 +47,8 @@ func _physics_process(delta):
 			if pathfind_to(player.position, delta): # If pathfinding has finished
 				state = states.ATTACKING
 		states.DEAD:
-			queue_free()
+			pass
+			#queue_free()
 
 
 
@@ -77,9 +79,23 @@ func update_healthbar(value):
 	if value < healthbar.max_value:
 		healthbar.show()
 	healthbar.value = value
+	if value <= 0:
+		if !dead:
+			dead = true
+			var instance = splat.instance()
+			$Sprite.queue_free()
+			instance.start()
+			add_child(instance)
+			$Timer.start()
+
+			
 
 func update_health(value):
 	update_healthbar(value)
 	health = value
 	if health <= 0:
 		state = states.DEAD
+
+
+func _on_Timer_timeout():
+	queue_free()
