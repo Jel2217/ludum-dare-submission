@@ -11,14 +11,28 @@ var points_index = 0
 var velocity = Vector2.ZERO
 var epsilon = 1
 
+enum states {IDLE, ATTACKING, MOVING}
+var state = states.MOVING
+
 func _physics_process(_delta):
 	if Input.is_action_pressed("test"):
-		points_index = 0
-		points = nav.get_simple_path(position, player.position, true)
-		line.set_points(points)
+		pass
 	
+	match state:
+		states.IDLE:
+			pass
+		states.ATTACKING:
+			pass
+		states.MOVING: 
+			pathfind_to(player.position)
+
+
+
+func pathfind_to(location):
+	points_index = 0
+	points = nav.get_simple_path(position, location, true)
+	line.set_points(points)
 	if !points: return
-	print(points.size())
 	if points_index>=points.size():
 		return
 	var target = points[points_index]

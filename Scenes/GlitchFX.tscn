@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/White.png" type="Texture" id=1]
-[ext_resource path="res://Other Resources/Glitch_Shaders/Normalised.gdshader" type="Shader" id=2]
-[ext_resource path="res://Other Resources/Glitch_Shaders/Waves.gdshader" type="Shader" id=3]
+[ext_resource path="res://Other Resources/Glitch_Shaders/Normalised.shader" type="Shader" id=2]
+[ext_resource path="res://Other Resources/Glitch_Shaders/Waves.shader" type="Shader" id=3]
 [ext_resource path="res://Scripts/GlitchFX.gd" type="Script" id=4]
-[ext_resource path="res://Other Resources/Glitch_Shaders/Inverted.gdshader" type="Shader" id=5]
+[ext_resource path="res://Other Resources/Glitch_Shaders/Inverted.shader" type="Shader" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
