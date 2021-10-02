@@ -26,9 +26,11 @@ color_ramp = SubResource( 2 )
 
 [node name="Splat" type="Particles2D"]
 emitting = false
-amount = 50
-lifetime = 0.5
+amount = 75
+lifetime = 0.75
 one_shot = true
+explosiveness = 1.0
+randomness = 1.0
 process_material = SubResource( 3 )
 script = ExtResource( 1 )
 
