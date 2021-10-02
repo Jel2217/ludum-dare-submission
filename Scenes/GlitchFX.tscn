@@ -90,6 +90,7 @@ __meta__ = {
 }
 
 [node name="Wirl" type="TextureRect" parent="."]
+visible = false
 material = SubResource( 4 )
 margin_left = -32000.0
 margin_top = -18000.0

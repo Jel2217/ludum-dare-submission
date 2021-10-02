@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var move_speed = 100
 var speed = 100
-onready var nav =  get_node("/root/Level/Navigation2D")
-onready var player =  get_node("/root/Level/Player")
-onready var line =  get_node("/root/Level/Line")
+onready var nav =  get_node("/root/Control/Level/Navigation2D")
+onready var player =  get_node("/root/Control/Level/Player")
+onready var line =  get_node("/root/Control/Level/Line")
 var path
 var points
 var points_index = 0
