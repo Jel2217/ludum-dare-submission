@@ -5,29 +5,13 @@
 [ext_resource path="res://Other Resources/Glitch_Shaders/Waves.shader" type="Shader" id=3]
 [ext_resource path="res://Scripts/GlitchFX.gd" type="Script" id=4]
 [ext_resource path="res://Other Resources/Glitch_Shaders/Inverted.shader" type="Shader" id=5]
+[ext_resource path="res://Other Resources/Glitch_Shaders/Deep_Fried.shader" type="Shader" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
 
-[sub_resource type="Shader" id=2]
-code = "shader_type canvas_item;
-
-uniform float rotation = 0.0;
-
-void fragment() {
-	vec2 uv = SCREEN_UV;
-	vec2 rel = uv - vec2(0.5, 0.5);
-	float angle = length(rel) * rotation;
-	mat2 rot = mat2(vec2(cos(angle), -sin(angle)), vec2(sin(angle), cos(angle)));
-	rel = rot * rel;
-	uv = clamp(rel + vec2(0.5,0.5), vec2(0.0, 0.0), vec2(1.0, 1.0));
-	COLOR.rgb = textureLod(SCREEN_TEXTURE, uv, 0.0).rgb;
-}
-"
-
 [sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-shader_param/rotation = 0.5
+shader = ExtResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 2 )
@@ -38,7 +22,6 @@ shader_param/frequency = 60.0
 shader_param/depth = 0.005
 
 [node name="Glitches" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -100,7 +83,6 @@ __meta__ = {
 }
 
 [node name="Wave" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 5 )
 margin_left = 32000.0
 margin_top = 18000.0
