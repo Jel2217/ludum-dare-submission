@@ -115,6 +115,12 @@ script = ExtResource( 7 )
 [node name="Enemy" parent="Level" instance=ExtResource( 3 )]
 position = Vector2( 75.9604, -45.7502 )
 
+[node name="Enemy1" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( -21.1416, -67.9743 )
+
+[node name="Enemy2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 40, 0 )
+
 [node name="ShaderPos" type="Position2D" parent="."]
 
 [node name="Glitches" parent="ShaderPos" instance=ExtResource( 6 )]

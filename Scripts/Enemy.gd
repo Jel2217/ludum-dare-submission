@@ -23,7 +23,7 @@ var epsilon = 1
 
 var enemy_stopping_distance = 20
 
-enum states {IDLE, ATTACKING, MOVING}
+enum states {IDLE, ATTACKING, MOVING, DEAD}
 var state = states.MOVING
 
 func _ready():
@@ -32,9 +32,7 @@ func _ready():
 	healthbar.max_value = max_health
 
 
-func _physics_process(_delta):
-	if health <= 0:
-		queue_free()
+func _physics_process(delta):
 	if Input.is_action_pressed("test"):
 		pass
 	print(health)
@@ -45,12 +43,14 @@ func _physics_process(_delta):
 			if (player.position - position).length() > enemy_stopping_distance:
 				state = states.MOVING
 		states.MOVING: 
-			if pathfind_to(player.position): # If pathfinding has finished
+			if pathfind_to(player.position, delta): # If pathfinding has finished
 				state = states.ATTACKING
+		states.DEAD:
+			queue_free()
 
 
 
-func pathfind_to(location):
+func pathfind_to(location, delta):
 	points_index = 0
 	points = nav.get_simple_path(position, location, true)
 	if !points: return false
@@ -62,7 +62,7 @@ func pathfind_to(location):
 		if points_index>=points.size():
 			return false
 		target = points[points_index]
-	velocity = (target - position).normalized() * move_speed
+	velocity = (target - position).normalized() * move_speed * delta
 	velocity = move_and_slide(velocity)
 	print((location - position).length())
 	if (location - position).length() < enemy_stopping_distance:
@@ -77,3 +77,9 @@ func update_healthbar(value):
 	if value < healthbar.max_value:
 		healthbar.show()
 	healthbar.value = value
+
+func update_health(value):
+	update_healthbar(value)
+	health = value
+	if health <= 0:
+		state = states.DEAD
