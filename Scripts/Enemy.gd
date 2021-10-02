@@ -11,7 +11,7 @@ var points_index = 0
 var velocity = Vector2.ZERO
 var epsilon = 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("test"):
 		points_index = 0
 		points = nav.get_simple_path(position, player.position, true)

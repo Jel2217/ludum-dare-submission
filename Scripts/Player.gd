@@ -30,7 +30,7 @@ func get_input():
 
 	velocity = velocity.normalized() * speed
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	sword.look_at(get_global_mouse_position())
