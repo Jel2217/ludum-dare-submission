@@ -50,7 +50,7 @@ script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 640.0
-margin_right = 670.001
+margin_right = 665.0
 margin_bottom = 29.9998
 stretch_mode = 2
 __meta__ = {
@@ -58,28 +58,21 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
-margin_right = 30.0
+margin_right = 25.0
 margin_bottom = 30.0
-custom_constants/margin_right = 5
+custom_constants/margin_right = 2
 custom_constants/margin_top = 5
-custom_constants/margin_left = 5
+custom_constants/margin_left = 2
 custom_constants/margin_bottom = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer"]
-margin_left = 5.0
+margin_left = 2.0
 margin_top = 5.0
-margin_right = 25.0
+margin_right = 23.0
 margin_bottom = 25.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="TextureRect"]
-margin_right = 30.0
-margin_bottom = 30.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

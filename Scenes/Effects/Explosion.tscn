@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Audio/mixkit-fast-game-explosion-1688.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Explosion.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 )
+colors = PoolColorArray( 1, 0.0196078, 0.0196078, 1, 1, 0.54902, 0, 1, 1, 0.921569, 0, 1, 0.164706, 1, 0, 1, 0.156863, 0, 1, 1, 0.741176, 0, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 8.76
+linear_accel_random = 1.0
+damping = 100.0
+damping_random = 0.5
+scale = 5.0
+color_ramp = SubResource( 2 )
+
+[node name="Explosion" type="Particles2D"]
+emitting = false
+amount = 400
+one_shot = true
+process_material = SubResource( 3 )
+script = ExtResource( 2 )
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
