@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/LevelBox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/LevelGrid.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/LevelGrid.gd" type="Script" id=2]
 
 [node name="LevelGrid" type="GridContainer"]
 margin_right = 352.0

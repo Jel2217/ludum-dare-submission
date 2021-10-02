@@ -21,7 +21,6 @@ func _on_LevelBox_gui_input(event):
 	if locked:
 		return
 	if event is InputEventMouseButton and event.pressed:
-		print("Clicked level ", level_num)
 		emit_signal("level_selected", level_num)
 
 
