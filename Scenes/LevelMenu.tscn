@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/LevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Font/fontt.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/arrowRight copy.png" type="Texture" id=3]
+[ext_resource path="res://Images/arrowLeft copy.png" type="Texture" id=4]
 
 [node name="LevelMenu" type="MarginContainer"]
 margin_right = 640.0
@@ -24,8 +26,41 @@ custom_constants/separation = 50
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 620.0
-margin_bottom = 13.0
+margin_bottom = 57.0
 custom_fonts/font = ExtResource( 2 )
 text = "Level Select"
 align = 1
 valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 107.0
+margin_right = 620.0
+margin_bottom = 340.0
+size_flags_vertical = 3
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_right = 93.0
+margin_bottom = 233.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="ClipControl" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 97.0
+margin_right = 522.0
+margin_bottom = 233.0
+rect_min_size = Vector2( 425, 0 )
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 526.0
+margin_right = 620.0
+margin_bottom = 233.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 5
