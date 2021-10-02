@@ -44,6 +44,7 @@ show_behind_parent = true
 position = Vector2( 320.212, 14.8624 )
 scale = Vector2( 2.00039, 1.34262 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Glitches" type="Control" parent="MarginContainer/VBoxContainer/CanvasLayer/AnimatedSprite"]
