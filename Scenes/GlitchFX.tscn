@@ -124,7 +124,6 @@ __meta__ = {
 }
 
 [node name="Invert" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 2 )
 margin_left = -240.0
 margin_top = -363.0
@@ -138,7 +137,6 @@ __meta__ = {
 }
 
 [node name="Wirl" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 4 )
 margin_left = -2761.0
 margin_top = -2759.0
@@ -151,7 +149,6 @@ __meta__ = {
 }
 
 [node name="Normalised" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 6 )
 margin_left = -2761.0
 margin_top = -2759.0
@@ -164,7 +161,6 @@ __meta__ = {
 }
 
 [node name="Deep Fried" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 4 )
 margin_left = -2761.0
 margin_top = -2759.0
@@ -176,8 +172,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wavey" type="TextureRect" parent="."]
-visible = false
+[node name="Wave" type="TextureRect" parent="."]
 material = SubResource( 8 )
 margin_left = -2761.0
 margin_top = -2759.0
@@ -190,7 +185,6 @@ __meta__ = {
 }
 
 [node name="Ye Olde" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 10 )
 margin_left = -2761.0
 margin_top = -2759.0
