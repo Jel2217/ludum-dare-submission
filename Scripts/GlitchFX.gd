@@ -5,7 +5,7 @@ extends Control
 #onready var camera = get_parent().get_node("Player/Camera2D")
 
 func _ready():
-	pass # Replace with function body.
+	pass
 	
 func invert(set):
 	get_node("Invert").visible = set
