@@ -7,7 +7,7 @@
 [ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=5]
 [ext_resource path="res://Images/Enemies/Red Slime/RedSlimeGun3.png" type="Texture" id=6]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -15,7 +15,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 4.65628
 height = 13.1527
 
@@ -36,14 +36,13 @@ texture = ExtResource( 6 )
 position = Vector2( 8, -0.5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-frame = 1
+frames = SubResource( 1 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.40458, 7.67781 )
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -12.0

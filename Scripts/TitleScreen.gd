@@ -4,8 +4,12 @@ onready var settings = $Settings
 onready var main = $Main
 
 var is_fullscreen = false
+var fs_file = "user://fullscreen.save"
+
 
 func _ready():
+	is_fullscreen = !load_fs()
+	toggle_fullscreen()
 	for child in main.get_children():
 		if child is Button: child.disabled = false
 	for child in settings.get_children():
@@ -55,6 +59,10 @@ func _on_Back_pressed():
 
 func _on_Fullscreen_pressed():
 	AudioStreamManager.play("res://Audio/GetAPowerUp.wav")
+	save_fs(!is_fullscreen)
+	toggle_fullscreen()
+	
+func toggle_fullscreen():
 	if is_fullscreen:
 		OS.window_fullscreen = false
 		is_fullscreen = false
@@ -86,3 +94,22 @@ func _on_Fullscreen_pressed():
 #		AudioStreamManager.active = true
 #		$Settings/SFX.text = "Sound Effects: ON"
 #	AudioStreamManager.play("res://Audio/GetAPowerUp.wav")
+
+func save_fs(full):
+	var file = File.new()
+	file.open(fs_file, File.WRITE)
+	file.store_var(full)
+	file.close()
+	
+func load_fs():
+	var file = File.new()
+	if file.file_exists(fs_file):
+		file.open(fs_file, File.READ)
+		var fs = file.get_var()
+		file.close()
+		return fs
+	else:
+		var fs = false
+		return fs
+
+	

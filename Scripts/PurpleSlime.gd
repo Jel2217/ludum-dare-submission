@@ -120,10 +120,10 @@ func _on_Timer_timeout():
 
 func _on_AttackTimer_timeout():
 	if (player.position - position).length() < enemy_stopping_distance:
-		var bullet = purplebullet.instance()
-		add_child(bullet)
 		for muzzle in $Muzzles.get_children():
+			var bullet = purplebullet.instance()
+			add_child(bullet)
 			bullet.global_transform = muzzle.global_transform
 			bullet.look_at(player.global_position)
-			bullet.apply_scale(Vector2(3,3))
+			bullet.apply_scale(Vector2(4,4))
 		$AttackTimer.start()

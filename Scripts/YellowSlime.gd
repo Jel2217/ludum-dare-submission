@@ -123,5 +123,5 @@ func _on_AttackTimer_timeout():
 		var bullet = yellowbullet.instance()
 		add_child(bullet)
 		bullet.global_transform = $Pivot/Barrel/Muzzle.global_transform
-		bullet.apply_scale(Vector2(3,3))
+		bullet.apply_scale(Vector2(4,4))
 		$AttackTimer.start()

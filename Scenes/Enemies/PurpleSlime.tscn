@@ -6,7 +6,6 @@
 [ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/EnemyHealthBar/greenbar.png" type="Texture" id=5]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
@@ -26,7 +25,6 @@ script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -55,7 +53,10 @@ position = Vector2( -4.2548, 9.67759 )
 position = Vector2( 5.58964, 9.59416 )
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
