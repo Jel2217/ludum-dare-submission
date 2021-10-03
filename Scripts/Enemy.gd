@@ -51,9 +51,13 @@ func _physics_process(delta):
 			set_collision_mask(0)
 			set_collision_layer(0)
 	if lunging:
-		move_and_collide(avelocity*delta*speed)
+		move_and_collide(avelocity*delta*speed*2)
 	if retreating && (player.position - position).length() < enemy_stopping_distance:
-		move_and_collide(-avelocity*delta*speed)
+		move_and_collide(-avelocity*delta*speed*2)
+	if !(player.global_position.angle_to_point(self.global_position)>-PI/4 && player.position.angle_to_point(self.position)<(PI)/4):
+		$Sprite.flip_h=true
+	else:
+		$Sprite.flip_h=false
 
 
 
@@ -123,6 +127,7 @@ func _on_WaitTimer_timeout():
 	avelocity = (glob_loc-position).normalized()
 	retreating = true
 	lunging = false
+	player.update_health(player.health-1)
 	$StopTimer.start()
 	$AttackTimer.start()
 

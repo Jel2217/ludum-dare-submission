@@ -53,6 +53,12 @@ func _physics_process(delta):
 			set_collision_mask(0)
 			set_collision_layer(0)
 	$Pivot.look_at(player.global_position)
+	if !(player.global_position.angle_to_point(self.global_position)>-PI/4 && player.position.angle_to_point(self.position)<(PI)/4):
+		$Sprite.flip_h=true
+		$Pivot/Barrel.flip_h = true
+	else:
+		$Sprite.flip_h=false
+		$Pivot/Barrel.flip_h = true
 
 
 func pathfind_to(location, delta):

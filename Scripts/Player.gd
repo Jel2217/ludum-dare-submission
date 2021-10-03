@@ -56,7 +56,7 @@ func _physics_process(_delta):
 		states.MOVING:
 			sprite.play("moving")
 		states.DEAD:
-			queue_free()
+			self.hide()
 
 
 func fire_projectile():
