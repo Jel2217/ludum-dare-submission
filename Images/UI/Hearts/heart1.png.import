@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Knob 16x16.png-5a0fd82761009d98da726c06162a07e8.stex"
+path="res://.import/heart1.png-8732f781c284fefb830aa81bd7b81193.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Knob 16x16.png"
-dest_files=[ "res://.import/Knob 16x16.png-5a0fd82761009d98da726c06162a07e8.stex" ]
+source_file="res://Images/UI/Hearts/heart1.png"
+dest_files=[ "res://.import/heart1.png-8732f781c284fefb830aa81bd7b81193.stex" ]
 
 [params]
 
