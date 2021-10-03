@@ -26,7 +26,7 @@ shader = ExtResource( 3 )
 shader_param/frequency = 60.0
 shader_param/depth = 0.005
 
-[node name="Glitches" type="Control"]
+[node name="GlitchFX" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -48,7 +48,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wirl" type="TextureRect" parent="."]
+[node name="Whirl" type="TextureRect" parent="."]
 visible = false
 material = SubResource( 6 )
 margin_left = -32000.0
@@ -107,5 +107,10 @@ one_shot = true
 [node name="FatTimer" type="Timer" parent="."]
 wait_time = 20.0
 
+[node name="ScreenTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
 [connection signal="timeout" from="InvisTimer" to="." method="_on_InvisTimer_timeout"]
 [connection signal="timeout" from="FatTimer" to="." method="_on_FatTimer_timeout"]
+[connection signal="timeout" from="ScreenTimer" to="." method="_on_ScreenTimer_timeout"]

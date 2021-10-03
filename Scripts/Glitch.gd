@@ -3,13 +3,15 @@ extends AnimationPlayer
 export var glitch_card_num = 7
 onready var card_texture = $TextureRect/MarginContainer/TextureRect
 onready var crumble = $TextureRect/MarginContainer/Crumble
+onready var glitch_fx = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node("GlitchFX")
 var i = 0
 var rand = 0
 var texture
+var card
 
 func _ready():
 	randomize()
-	var card = round(rand_range(1,glitch_card_num))
+	card = round(rand_range(1,glitch_card_num))
 	#TODO - add unknown card feature
 	var img = Image.new()
 	var itex = ImageTexture.new()
@@ -46,6 +48,27 @@ func _on_Timer_timeout():
 	if rand == 1   and i<130 and i>20:
 		self.play("FallOff")
 		crumble.set_emitting(true)
+		if card == 1:
+			glitch_fx.explosions()
+		elif card == 2:
+			glitch_fx.fat()
+		elif card == 3:
+			glitch_fx.invis()
+		elif card == 4:
+			var effect = round(rand_range(1,3))
+			if effect == 1:
+				glitch_fx.invert()
+			elif effect == 2:
+				glitch_fx.normalise()
+			elif effect == 3:
+				glitch_fx.deepfried()
+		elif card == 5:
+				glitch_fx.enemy()
+		elif card == 6:
+				glitch_fx.teleport()
+		elif card == 7:
+				glitch_fx.wirl()
+		
 		i = 140
 	if i >= 150:
 		queue_free()
