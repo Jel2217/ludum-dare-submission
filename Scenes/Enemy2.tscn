@@ -25,17 +25,19 @@ height = 5.2177
 collision_layer = 2
 script = ExtResource( 2 )
 
-[node name="Barrel" type="Sprite" parent="."]
-position = Vector2( -4.918, 1.08796 )
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2( -5, 1 )
+
+[node name="Barrel" type="Sprite" parent="Pivot"]
+position = Vector2( 1, 0 )
 texture = ExtResource( 1 )
 offset = Vector2( 4.918, -1.08796 )
 
-[node name="Position2D" type="Position2D" parent="Barrel"]
+[node name="Muzzle" type="Position2D" parent="Pivot/Barrel"]
 position = Vector2( 12.142, -0.732961 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -45,9 +47,9 @@ shape = SubResource( 2 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -12.0
-margin_top = -6.0
+margin_top = -9.0
 margin_right = 12.0
-margin_bottom = -1.0
+margin_bottom = -4.0
 value = 100.0
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
@@ -62,14 +64,5 @@ one_shot = true
 wait_time = 1.5
 one_shot = true
 
-[node name="WaitTimer" type="Timer" parent="."]
-wait_time = 0.75
-one_shot = true
-
-[node name="StopTimer" type="Timer" parent="."]
-wait_time = 0.5
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
-[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
-[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]

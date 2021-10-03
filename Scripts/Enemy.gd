@@ -28,6 +28,7 @@ var enemy_stopping_distance = 50
 var is_attacking = false
 enum states {IDLE, ATTACKING, MOVING, DEAD}
 var state = states.MOVING
+var avelocity = Vector2.ZERO
 
 func _ready():
 	healthbar.hide()
@@ -36,8 +37,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if Input.is_action_pressed("test"):
-		pass
+	avelocity = (player.position- position).normalized()
 	match state:
 		states.IDLE:
 			pass
@@ -51,11 +51,9 @@ func _physics_process(delta):
 			set_collision_mask(0)
 			set_collision_layer(0)
 	if lunging:
-		velocity = (glob_loc-position).normalized()
-		move_and_collide(velocity*delta*speed)
-	if retreating:
-		velocity = (glob_loc-position).normalized()
-		move_and_collide(-velocity*delta*speed)
+		move_and_collide(avelocity*delta*speed)
+	if retreating && (player.position - position).length() < enemy_stopping_distance:
+		move_and_collide(-avelocity*delta*speed)
 
 
 
@@ -111,7 +109,7 @@ func _on_Timer_timeout():
 func _on_AttackTimer_timeout():
 	if (glob_loc - position).length() < enemy_stopping_distance:
 		is_attacking = true
-		velocity = (glob_loc-position).normalized()
+		avelocity = (glob_loc-position).normalized()
 		lunging = true
 		retreating = false
 		$WaitTimer.start()
@@ -122,7 +120,7 @@ func _on_AttackTimer_timeout():
 
 
 func _on_WaitTimer_timeout():
-	velocity = (glob_loc-position).normalized()
+	avelocity = (glob_loc-position).normalized()
 	retreating = true
 	lunging = false
 	$StopTimer.start()
@@ -130,5 +128,5 @@ func _on_WaitTimer_timeout():
 
 
 func _on_StopTimer_timeout():
-	velocity = (glob_loc-position).normalized()
+	avelocity = (glob_loc-position).normalized()
 	retreating = false
