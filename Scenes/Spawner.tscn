@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Spawner.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 78, 78 )
+
+[node name="Spawner1" type="Area2D"]
+position = Vector2( 217.859, -53.3629 )
+script = ExtResource( 1 )
+waves = 1
+blue_slime_amount = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 78, 78 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_Spawner_body_entered"]
