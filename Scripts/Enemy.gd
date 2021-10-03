@@ -51,9 +51,9 @@ func _physics_process(delta):
 			set_collision_mask(0)
 			set_collision_layer(0)
 	if lunging:
-		move_and_collide(velocity*delta*3)
+		move_and_collide(velocity*delta*speed)
 	if retreating:
-		move_and_collide(-velocity*delta*5)
+		move_and_collide(-velocity*delta*speed)
 
 
 
@@ -107,9 +107,9 @@ func _on_Timer_timeout():
 
 
 func _on_AttackTimer_timeout():
-	if (glob_loc - position).length() < enemy_stopping_distance + 10:
+	if (glob_loc - position).length() < enemy_stopping_distance:
 		is_attacking = true
-		velocity = (glob_loc-position)
+		velocity = (glob_loc-position).normalized()
 		lunging = true
 		retreating = false
 		$WaitTimer.start()
@@ -120,7 +120,7 @@ func _on_AttackTimer_timeout():
 
 
 func _on_WaitTimer_timeout():
-	velocity = (glob_loc-position)
+	velocity = (glob_loc-position).normalized()
 	retreating = true
 	lunging = false
 	$StopTimer.start()
@@ -128,4 +128,5 @@ func _on_WaitTimer_timeout():
 
 
 func _on_StopTimer_timeout():
+	velocity = (glob_loc-position).normalized()
 	retreating = false

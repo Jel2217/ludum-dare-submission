@@ -22,6 +22,7 @@ height = 9.09635
 [node name="Yellow_Slime" type="KinematicBody2D" groups=[
 "enemy",
 ]]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Barrel" type="Sprite" parent="."]
@@ -34,7 +35,6 @@ position = Vector2( 12.142, -0.732961 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
