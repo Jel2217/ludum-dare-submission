@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-enum states {IDLE, MOVING, DEAD}
+enum states {IDLE, MOVING}
 var state = states.IDLE
 
 var speed = 150
-
+var dead = false
 
 var can_fire = true
 var fire_delay = 0.25
@@ -40,6 +40,7 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _physics_process(_delta):
+	if dead: return
 	get_input()
 	if Input.is_action_just_pressed("test"):
 		update_health(health - 1)
@@ -55,8 +56,7 @@ func _physics_process(_delta):
 			sprite.play("idle")
 		states.MOVING:
 			sprite.play("moving")
-		states.DEAD:
-			self.hide()
+		
 
 
 func fire_projectile():
@@ -69,8 +69,9 @@ func fire_projectile():
 	can_fire = true
 
 func update_health(value):
-	if state == states.DEAD: return
-	if value <= 0: state = states.DEAD
 	health = value
+	if health == 0:
+		hide()
+		dead = true
 	emit_signal("health", value)
 	
