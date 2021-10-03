@@ -1,11 +1,15 @@
 extends Control
 	
 var explosion = preload("res://Scenes/Effects/Explosion.tscn")
-var player = get_tree().get_root().get_node("Player")
 var enemy = preload("res://Scenes/Enemy1.tscn")
+
+onready var player = get_tree().get_root().find_node("Player")
+
 var numEnemies = 3
+
 export var x = 10
 export var y = 10
+
 func invert(set):
 	get_node("Invert").visible = set
 
@@ -37,11 +41,12 @@ func teleport():
 func enemy():
 	for i in numEnemies:
 		var e = enemy.instance()
-		enemy.position = generate_random_pos()
-		
+		e.position = generate_random_pos()
+		player.get_parent().add_child(e)
 	
 
 func generate_random_pos():
+	randomize()
 	var x_off = rand_range(-x,x)
 	var y_off = rand_range(-y,y)
 	var x_pos = player.position.x + x_off 
