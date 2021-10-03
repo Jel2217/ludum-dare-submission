@@ -7,9 +7,9 @@
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 100.583, -21.9797, 143.397, -95.7779, 144.571, 63.6488, 99.5498, 52.8514, -144.238, 64.0244, 74.5439, 52.8651, -144.238, -96.0595, 60.8445, -22.0691, 60.8445, 5.1033, 74.5748, 5.24867 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 6, 1, 0, 7 ), PoolIntArray( 4, 6, 7, 8 ), PoolIntArray( 5, 4, 8, 9 ) ]
-outlines = [ PoolVector2Array( -144.238, -96.0595, -144.238, 64.0244, 144.571, 63.6488, 143.397, -95.7779 ), PoolVector2Array( 74.5439, 52.8651, 99.5498, 52.8514, 100.583, -21.9797, 60.8445, -22.0691, 60.8445, 5.1033, 74.5748, 5.24867 ) ]
+vertices = PoolVector2Array( 143.397, -95.7779, 144.571, 63.6488, -144.238, 64.0244, -144.238, -96.0595 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -144.238, -96.0595, -144.238, 64.0244, 144.571, 63.6488, 143.397, -95.7779 ) ]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -54,6 +54,6 @@ position = Vector2( 40, 0 )
 
 [node name="Glitches" parent="ShaderPos" instance=ExtResource( 6 )]
 margin_left = 6.375
-margin_top = -2.125
+margin_top = -1.23309
 margin_right = 606.375
-margin_bottom = 317.875
+margin_bottom = 318.767
