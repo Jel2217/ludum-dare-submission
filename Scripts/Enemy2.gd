@@ -5,7 +5,8 @@ extends KinematicBody2D
 var green_bar = preload("res://Images/UI/EnemyHealthBar/greenbar.png")
 var red_bar = preload("res://Images/UI/EnemyHealthBar/redbar.png")
 var yellow_bar = preload("res://Images/UI/EnemyHealthBar/yellowbar.png")
-var splat = preload("res://Scenes/Effects/Splat.tscn")
+var yellowbullet = preload("res://Scenes/YellowBullet.tscn")
+var splat = preload("res://Scenes/Effects/YellowSplat.tscn")
 onready var healthbar = $Healthbar
 
 var max_health = 100
@@ -24,7 +25,8 @@ var glob_loc
 var epsilon = 1
 var lunging = false
 var retreating = false
-var enemy_stopping_distance = 50
+var enemy_stopping_distance = 75
+
 var is_attacking = false
 enum states {IDLE, ATTACKING, MOVING, DEAD}
 var state = states.MOVING
@@ -50,8 +52,7 @@ func _physics_process(delta):
 		states.DEAD:
 			set_collision_mask(0)
 			set_collision_layer(0)
-	$Barrel.rotation = $Barrel/Position2D.position.angle_to(player.position)
-
+	$Pivot.look_at(player.global_position)
 
 
 func pathfind_to(location, delta):
@@ -104,12 +105,9 @@ func _on_Timer_timeout():
 
 
 func _on_AttackTimer_timeout():
-	pass
-
-
-func _on_WaitTimer_timeout():
-	pass
-
-
-func _on_StopTimer_timeout():
-	pass
+	if (player.position - position).length() < enemy_stopping_distance:
+		var bullet = yellowbullet.instance()
+		add_child(bullet)
+		bullet.global_transform = $Pivot/Barrel/Muzzle.global_transform
+		bullet.apply_scale(Vector2(3,3))
+		$AttackTimer.start()

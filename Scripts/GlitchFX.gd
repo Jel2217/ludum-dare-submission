@@ -1,7 +1,7 @@
 extends Control
 	
 var explosion = preload("res://Scenes/Effects/Explosion.tscn")
-var enemy = preload("res://Scenes/Enemy1.tscn")
+var enemy = preload("res://Scenes/BlueSlime.tscn")
 
 onready var player = get_tree().get_root().find_node("Player")
 
