@@ -18,3 +18,9 @@ func update_healthbar(value):
 
 func _on_Player_health(value):
 	update_healthbar(value)
+
+func player_won():
+	print("player won")
+
+func player_lost():
+	print("player lost")

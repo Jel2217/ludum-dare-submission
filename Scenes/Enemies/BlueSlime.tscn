@@ -42,6 +42,8 @@ var activated_by_glitch = false
 
 func _ready():
 	healthbar.hide()
+	if scale.x == 5 and scale.y == 5:
+		max_health = 500
 	health = max_health
 	healthbar.max_value = max_health
 
@@ -49,7 +51,7 @@ func enable_activated_by_glitch():
 	activated_by_glitch = true
 
 func _physics_process(delta):
-	avelocity = (player.position- position).normalized()
+	velocity = (player.position - position).normalized()
 	match state:
 		states.IDLE:
 			pass
