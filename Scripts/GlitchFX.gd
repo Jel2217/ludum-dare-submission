@@ -53,5 +53,13 @@ func generate_random_pos():
 	var y_pos = player.position.y + y_off 
 	return Vector2(x_pos, y_pos)
 
+func fat():
+	player.speed = 50
+	$FatTimer.start()
+
 func _on_InvisTimer_timeout():
 	player.show()
+
+
+func _on_FatTimer_timeout():
+	player.speed = 150

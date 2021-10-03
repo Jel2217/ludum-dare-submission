@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fireflake.png-dcc4b73d1099542d32798190d5d7740f.stex"
+path="res://.import/corner-explosion.png-b8b9fdd4b058f44d33ee9af3fc0e416a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Glitch Cards/fireflake.png"
-dest_files=[ "res://.import/fireflake.png-dcc4b73d1099542d32798190d5d7740f.stex" ]
+source_file="res://Images/Glitch Cards/corner-explosion.png"
+dest_files=[ "res://.import/corner-explosion.png-b8b9fdd4b058f44d33ee9af3fc0e416a.stex" ]
 
 [params]
 
