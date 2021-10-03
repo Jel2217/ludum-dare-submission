@@ -16,8 +16,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 3.72738
-height = 9.09635
+radius = 6.99741
+height = 5.2177
 
 [node name="Yellow_Slime" type="KinematicBody2D" groups=[
 "enemy",
@@ -35,10 +35,11 @@ position = Vector2( 12.142, -0.732961 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.525555, 7.14762 )
+position = Vector2( -0.274456, 5.32716 )
 rotation = 1.5708
 shape = SubResource( 2 )
 

@@ -51,8 +51,10 @@ func _physics_process(delta):
 			set_collision_mask(0)
 			set_collision_layer(0)
 	if lunging:
+		velocity = (glob_loc-position).normalized()
 		move_and_collide(velocity*delta*speed)
 	if retreating:
+		velocity = (glob_loc-position).normalized()
 		move_and_collide(-velocity*delta*speed)
 
 
