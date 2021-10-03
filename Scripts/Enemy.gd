@@ -80,11 +80,7 @@ func update_healthbar(value):
 	if value <= 0:
 		if !dead:
 			dead = true
-			var instance = splat.instance()
-			$Sprite.queue_free()
-			instance.start()
-			add_child(instance)
-			$Timer.start()
+			
 
 			
 
@@ -93,6 +89,13 @@ func update_health(value):
 	health = value
 	if health <= 0:
 		state = states.DEAD
+		var instance = splat.instance()
+		$Sprite.hide()
+		$Healthbar.hide()
+		instance.start()
+		add_child(instance)
+		$Timer.start()
+		
 
 
 func _on_Timer_timeout():
