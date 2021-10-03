@@ -125,5 +125,5 @@ func _on_AttackTimer_timeout():
 			add_child(bullet)
 			bullet.global_transform = muzzle.global_transform
 			bullet.look_at(player.global_position)
-			bullet.apply_scale(Vector2(4,4))
+			bullet.apply_scale(Vector2(3,3))
 		$AttackTimer.start()
