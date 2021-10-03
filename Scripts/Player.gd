@@ -12,7 +12,7 @@ var fire_delay = 0.25
 var velocity = Vector2.ZERO
 onready var sprite = $AnimatedSprite
 onready var sword = $Pivot/laser_sword 
-
+onready var xp = get_parent().get_node("UI CanvasLayer/Control2")
 var projectile = preload("res://Scenes/Projectile.tscn")
 
 
@@ -74,4 +74,10 @@ func update_health(value):
 		hide()
 		dead = true
 	emit_signal("health", value)
+	
+func buff(level):
+	pass
+	
+func enemy_hit():
+	ui.on_enemy_killed()
 	

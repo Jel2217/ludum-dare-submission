@@ -28,21 +28,21 @@ custom_constants/separation = 50
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 620.0
-margin_bottom = 57.0
+margin_bottom = 44.0
 custom_fonts/font = ExtResource( 2 )
 text = "Level Select"
 align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 107.0
+margin_top = 94.0
 margin_right = 620.0
 margin_bottom = 340.0
 size_flags_vertical = 3
 
 [node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_right = 126.0
-margin_bottom = 233.0
+margin_bottom = 246.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )
 expand = true
@@ -51,7 +51,7 @@ stretch_mode = 5
 [node name="ClipControl" type="Control" parent="VBoxContainer/HBoxContainer"]
 margin_left = 130.0
 margin_right = 490.0
-margin_bottom = 233.0
+margin_bottom = 246.0
 rect_min_size = Vector2( 360, 0 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -88,7 +88,7 @@ margin_right = 322.0
 [node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 494.0
 margin_right = 620.0
-margin_bottom = 233.0
+margin_bottom = 246.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 3 )
 expand = true
