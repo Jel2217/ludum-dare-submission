@@ -15,7 +15,7 @@ func _ready():
 	for space in gridbox.get_children():
 		for grid in space.get_children():
 			for box in grid.get_children():
-				var num = box.get_position_in_parent() + 1 + 18 * grid.get_position_in_parent()
+				var num = box.get_position_in_parent() + 1 + 15 * grid.get_position_in_parent()
 				box.level_num = num
 				box.locked = num > 1
 
