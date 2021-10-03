@@ -36,7 +36,6 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_pressed("test"):
 		pass
-	print(health)
 	match state:
 		states.IDLE:
 			pass
@@ -66,7 +65,6 @@ func pathfind_to(location, delta):
 		target = points[points_index]
 	velocity = (target - position).normalized() * move_speed * delta
 	velocity = move_and_slide(velocity)
-	print((location - position).length())
 	if (location - position).length() < enemy_stopping_distance:
 		return true
 
