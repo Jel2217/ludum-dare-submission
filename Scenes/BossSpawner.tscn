@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Levels/BossSpawner.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 142, 142 )
+
+[node name="BossSpawner" type="Area2D"]
+position = Vector2( 1256.15, 24.1859 )
+script = ExtResource( 1 )
+waves = 1
+blue_slime_amount = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_Spawner_body_entered"]
