@@ -20,10 +20,11 @@ var path
 var points
 var points_index = 0
 var velocity = Vector2.ZERO
+var glob_loc
 var epsilon = 1
 
-var enemy_stopping_distance = 20
-
+var enemy_stopping_distance = 50
+var is_attacking = false
 enum states {IDLE, ATTACKING, MOVING, DEAD}
 var state = states.MOVING
 
@@ -52,6 +53,7 @@ func _physics_process(delta):
 
 
 func pathfind_to(location, delta):
+	glob_loc = location
 	points_index = 0
 	points = nav.get_simple_path(position, location, true)
 	if !points: return false
@@ -63,9 +65,11 @@ func pathfind_to(location, delta):
 		if points_index>=points.size():
 			return false
 		target = points[points_index]
-	velocity = (target - position).normalized() * move_speed * delta
-	velocity = move_and_slide(velocity)
+	if !is_attacking:
+		velocity = (target - position).normalized() * move_speed * delta
+		velocity = move_and_slide(velocity)
 	if (location - position).length() < enemy_stopping_distance:
+		$AttackTimer.start()
 		return true
 
 func update_healthbar(value):
@@ -100,3 +104,13 @@ func update_health(value):
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+func _on_AttackTimer_timeout():
+	if (glob_loc - position).length() < enemy_stopping_distance + 10:
+		is_attacking = true
+		print()
+		velocity = (glob_loc-position) * speed
+		$AttackTimer.start()
+	else:
+		is_attacking = false

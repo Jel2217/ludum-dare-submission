@@ -10,20 +10,25 @@ var numEnemies = 3
 export var x = 10
 export var y = 10
 
-func invert(set):
-	get_node("Invert").visible = set
+func invert():
+	get_node("Invert").visible = true
+	$ScreenTimer.start()
 
-func wirl(set):
-	get_node("Wirl").visible = set
-
-func normalise(set):
-	get_node("Normalised").visible = set
-
-func deepfried(set):
-	get_node("Deep Fried").visible = set
-
-func wave(set):
-	get_node("Wave").visible = set
+func whirl():
+	get_node("Whirl").visible = true
+	$ScreenTimer.start()
+	
+func normalise():
+	get_node("Normalised").visible = true
+	$ScreenTimer.start()
+	
+func deepfried():
+	get_node("Deep Fried").visible = true
+	$ScreenTimer.start()
+	
+func wave():
+	get_node("Wave").visible = true
+	$ScreenTimer.start()
 	
 func explosions():
 	var instance = explosion.instance()
@@ -63,3 +68,11 @@ func _on_InvisTimer_timeout():
 
 func _on_FatTimer_timeout():
 	player.speed = 150
+
+
+func _on_ScreenTimer_timeout():
+	get_node("Invert").visible = false
+	get_node("Whirl").visible = false
+	get_node("Normalised").visible = false
+	get_node("Deep Fried").visible = false
+	get_node("Wave").visible = false
