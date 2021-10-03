@@ -75,3 +75,6 @@ func update_health(value):
 		dead = true
 	emit_signal("health", value)
 	
+func buff():
+	pass
+	

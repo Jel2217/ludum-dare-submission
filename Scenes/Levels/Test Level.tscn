@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Experience bar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI CanvasLayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GlitchFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
@@ -58,6 +59,12 @@ margin_left = -160.0
 margin_top = -91.3138
 margin_right = -160.0
 margin_bottom = -91.3138
+
+[node name="Control2" parent="Level" instance=ExtResource( 3 )]
+margin_left = -150.0
+margin_top = -75.0
+margin_right = -150.0
+margin_bottom = -75.0
 
 [node name="ShaderPos" type="Position2D" parent="."]
 
