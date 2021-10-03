@@ -1,56 +1,55 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Images/Enemies/Yellow slime/Yellowslimebarrel.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Enemy2.gd" type="Script" id=2]
-[ext_resource path="res://Images/Enemies/Yellow slime/Yellowslime2.png" type="Texture" id=3]
+[ext_resource path="res://Images/Enemies/Red Slime/Redslime2.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/RedSlime.gd" type="Script" id=2]
+[ext_resource path="res://Images/Enemies/Red Slime/Redslime1.png" type="Texture" id=3]
 [ext_resource path="res://Images/UI/EnemyHealthBar/greenbar.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=5]
-[ext_resource path="res://Images/Enemies/Yellow slime/Yellowslime1.png" type="Texture" id=6]
+[ext_resource path="res://Images/Enemies/Red Slime/RedSlimeGun3.png" type="Texture" id=6]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 6.99741
-height = 5.2177
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 4.65628
+height = 13.1527
 
-[node name="Yellow_Slime" type="KinematicBody2D" groups=[
+[node name="Red_Slime" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Pivot" type="Node2D" parent="."]
-position = Vector2( -5, 1 )
+position = Vector2( 0, 5.6 )
 
 [node name="Barrel" type="Sprite" parent="Pivot"]
-position = Vector2( 1, 0 )
-texture = ExtResource( 1 )
-offset = Vector2( 4.918, -1.08796 )
+position = Vector2( 4, 0 )
+texture = ExtResource( 6 )
 
 [node name="Muzzle" type="Position2D" parent="Pivot/Barrel"]
-position = Vector2( 12.142, -0.732961 )
+position = Vector2( 8, -0.5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.274456, 5.32716 )
+position = Vector2( 1.40458, 7.67781 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -12.0
-margin_top = -9.0
+margin_top = -3.5
 margin_right = 12.0
-margin_bottom = -4.0
+margin_bottom = 1.5
 value = 100.0
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 4 )

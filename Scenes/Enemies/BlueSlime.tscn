@@ -5,7 +5,7 @@
 [ext_resource path="res://Images/UI/EnemyHealthBar/greenbar.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=5]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
 
 
@@ -38,11 +38,15 @@ enum states {IDLE, ATTACKING, MOVING, DEAD}
 var state = states.MOVING
 var avelocity = Vector2.ZERO
 
+var activated_by_glitch = false
+
 func _ready():
 	healthbar.hide()
 	health = max_health
 	healthbar.max_value = max_health
 
+func enable_activated_by_glitch():
+	activated_by_glitch = true
 
 func _physics_process(delta):
 	avelocity = (player.position- position).normalized()
@@ -145,7 +149,7 @@ func _on_StopTimer_timeout():
 	retreating = false
 "
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
@@ -161,10 +165,11 @@ height = 9.09635
 "enemy",
 ]]
 collision_layer = 2
-script = SubResource( 4 )
+script = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
+frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

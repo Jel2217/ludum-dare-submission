@@ -2,15 +2,16 @@
 
 [ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/BlueSlime.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/YellowSlime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies/BlueSlime.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemies/YellowSlime.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI CanvasLayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GlitchFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/GreenSlime.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/GreenSlime.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UIOverlay.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Purple Slime.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/RedSlime.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Enemies/PurpleSlime.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemies/RedSlime.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 143.397, -95.7779, 144.571, 63.6488, -144.238, 64.0244, -144.238, -96.0595 )

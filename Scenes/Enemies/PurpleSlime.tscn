@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Images/Enemies/Purple Slime/PurpleSlime1.png" type="Texture" id=1]
+[ext_resource path="res://Images/Enemies/Purple Slime/PurpleSlime2.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/PurpleSlime.gd" type="Script" id=3]
+[ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=4]
+[ext_resource path="res://Images/UI/EnemyHealthBar/greenbar.png" type="Texture" id=5]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 3.81562
+height = 9.92657
+
+[node name="Purple Slime" type="KinematicBody2D" groups=[
+"enemy",
+]]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.583992, 7.75876 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Healthbar" type="TextureProgress" parent="."]
+margin_left = -12.0
+margin_top = -4.0
+margin_right = 12.0
+margin_bottom = 1.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Muzzles" type="Node2D" parent="."]
+
+[node name="Muzzle1" type="Position2D" parent="Muzzles"]
+position = Vector2( -4.2548, 9.67759 )
+
+[node name="Muzzle2" type="Position2D" parent="Muzzles"]
+position = Vector2( 5.58964, 9.59416 )
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

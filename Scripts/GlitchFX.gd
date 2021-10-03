@@ -1,7 +1,7 @@
 extends Control
 	
 var explosion = preload("res://Scenes/Effects/Explosion.tscn")
-var enemy = preload("res://Scenes/BlueSlime.tscn")
+var enemy = preload("res://Scenes/Enemies/BlueSlime.tscn")
 
 onready var player = get_parent().get_parent().find_node("Player")
 
