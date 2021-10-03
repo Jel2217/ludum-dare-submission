@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Greencube.png-2f549d48a7564f03be772a585ba883d2.stex"
+path="res://.import/Playerproj.png-1635a9fd3b33e2f50f0ea3f03104b955.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Greencube.png"
-dest_files=[ "res://.import/Greencube.png-2f549d48a7564f03be772a585ba883d2.stex" ]
+source_file="res://Images/Player/Playerproj.png"
+dest_files=[ "res://.import/Playerproj.png-1635a9fd3b33e2f50f0ea3f03104b955.stex" ]
 
 [params]
 
