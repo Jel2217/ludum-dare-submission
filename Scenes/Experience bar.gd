@@ -3,7 +3,7 @@ extends Control
 var level = 0
 var experience = 0
 var level_up_xp = 100
-onready var player = get_parent().get_node("Player")
+onready var player = get_parent()
 onready var bar = $Experience
 onready var text = $Level
 
