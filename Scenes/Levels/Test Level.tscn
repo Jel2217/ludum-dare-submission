@@ -49,16 +49,14 @@ process_mode = 0
 smoothing_enabled = true
 script = ExtResource( 7 )
 
-[node name="Control2" parent="Level/Player/Camera2D" instance=ExtResource( 3 )]
-margin_left = -150.0
-margin_top = -75.0
-margin_right = -150.0
-margin_bottom = -75.0
-
 [node name="Purple Slime" parent="Level" instance=ExtResource( 10 )]
 position = Vector2( 140, 0 )
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
+
+[node name="Control2" parent="Level/UI CanvasLayer" instance=ExtResource( 3 )]
+margin_top = 15.0
+margin_bottom = 15.0
 
 [node name="Control" parent="Level" instance=ExtResource( 9 )]
 margin_left = -160.0

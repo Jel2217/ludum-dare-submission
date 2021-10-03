@@ -3,7 +3,7 @@ extends Control
 var level = 0
 var experience = 0
 var level_up_xp = 100
-onready var player = get_parent()
+onready var player = get_parent().get_parent().get_node("Player")
 onready var bar = $Experience
 onready var text = $Level
 
@@ -17,6 +17,9 @@ func on_enemy_killed():
 	experience = experience + 1
 	bar.value = experience
 	#load everything back into file
+	if experience == level_up_xp:
+		on_level_up()
+	 
 
 	
 func on_level_up():
