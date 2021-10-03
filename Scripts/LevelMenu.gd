@@ -2,7 +2,7 @@ extends MarginContainer
 
 var num_grids = 1
 var current_grid = 1
-var grid_width = 546
+var grid_width = 510
 export var num_levels_unlocked = 1
 
 var level_file = "user://level.save"

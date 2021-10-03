@@ -4,7 +4,7 @@ extends Particles2D
 func start():
 	$SFX.play()
 	set_emitting(true)
-	$Timer.start()
+	#$Timer.start()
 
 
 func _on_Timer_timeout():
