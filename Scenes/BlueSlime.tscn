@@ -5,7 +5,7 @@
 [ext_resource path="res://Images/UI/EnemyHealthBar/greenbar.png" type="Texture" id=4]
 [ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=5]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=4]
 script/source = "extends KinematicBody2D
 
 
@@ -145,7 +145,7 @@ func _on_StopTimer_timeout():
 	retreating = false
 "
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
@@ -161,11 +161,10 @@ height = 9.09635
 "enemy",
 ]]
 collision_layer = 2
-script = SubResource( 1 )
+script = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-frame = 1
+frames = SubResource( 5 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

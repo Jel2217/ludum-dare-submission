@@ -62,6 +62,10 @@ func _physics_process(delta):
 
 
 func pathfind_to(location, delta):
+	if !player.is_visible():
+		velocity = Vector2.ZERO
+		state = states.IDLE
+		return true
 	glob_loc = location
 	points_index = 0
 	points = nav.get_simple_path(position, location, true)
