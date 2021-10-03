@@ -56,7 +56,6 @@ func _physics_process(_delta):
 			sprite.play("idle")
 		states.MOVING:
 			sprite.play("moving")
-		
 
 
 func fire_projectile():

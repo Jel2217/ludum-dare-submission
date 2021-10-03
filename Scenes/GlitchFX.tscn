@@ -105,10 +105,10 @@ wait_time = 10.0
 one_shot = true
 
 [node name="FatTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 5.0
 
 [node name="ScreenTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 
 [connection signal="timeout" from="InvisTimer" to="." method="_on_InvisTimer_timeout"]

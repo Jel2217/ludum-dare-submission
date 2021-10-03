@@ -1,6 +1,6 @@
 extends AnimationPlayer
 
-export var glitch_card_num = 7
+export var glitch_card_num = 8
 onready var card_texture = $TextureRect/MarginContainer/TextureRect
 onready var crumble = $TextureRect/MarginContainer/Crumble
 onready var glitch_fx = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node("GlitchFX")
@@ -36,6 +36,9 @@ func _ready():
 	elif card == 7:
 		img.load("res://Images/Glitch Cards/whirlwind.png")
 		img.resize(20,20,0)
+	elif card == 8:
+		img.load("res://Images/Glitch Cards/wave-crest.png")
+		img.resize(20,20,0)
 	itex.create_from_image(img)
 	card_texture.set_texture(itex)
 	self.play("Conveyer")
@@ -43,6 +46,7 @@ func _ready():
 
 
 func _on_Timer_timeout():
+	randomize()
 	i = i + 1
 	rand = round(rand_range(0,65))
 	if rand == 1   and i<130 and i>20:
@@ -68,6 +72,8 @@ func _on_Timer_timeout():
 				glitch_fx.teleport()
 		elif card == 7:
 				glitch_fx.whirl()
+		elif card == 8:
+				glitch_fx.wave()
 		
 		i = 140
 	if i >= 150:

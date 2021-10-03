@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Audio/mixkit-fast-game-explosion-1688.wav" type="AudioStream" id=1]
+[ext_resource path="res://Audio/mixkit-pixel-chiptune-explosion-1692.wav" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/Explosion.gd" type="Script" id=2]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 )
-colors = PoolColorArray( 1, 0.0196078, 0.0196078, 1, 1, 0.54902, 0, 1, 1, 0.921569, 0, 1, 0.164706, 1, 0, 1, 0.156863, 0, 1, 1, 0.741176, 0, 1, 1 )
+offsets = PoolRealArray( 0, 0.16, 0.3, 0.5, 0.66, 0.83, 1 )
+colors = PoolColorArray( 1, 0.0196078, 0.0196078, 1, 1, 0.494118, 0, 1, 1, 0.988235, 0, 1, 0.0509804, 1, 0, 1, 0.101961, 0, 1, 1, 0.372549, 0, 0.678431, 1, 0.937255, 0, 1, 0 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
@@ -14,7 +14,7 @@ gradient = SubResource( 1 )
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
+initial_velocity = 200.0
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
@@ -27,11 +27,11 @@ scale_random = 1.0
 color_ramp = SubResource( 2 )
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 35.285
+radius = 64.2268
 
 [node name="Explosion" type="Particles2D"]
 emitting = false
-amount = 1000
+amount = 2000
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.4
@@ -41,6 +41,7 @@ script = ExtResource( 2 )
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
+volume_db = -10.117
 
 [node name="Area2D" type="Area2D" parent="."]
 gravity_vec = Vector2( 0, 0 )
