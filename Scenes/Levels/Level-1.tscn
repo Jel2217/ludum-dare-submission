@@ -58,9 +58,9 @@ position = Vector2( -21.1416, -67.9743 )
 [node name="ShaderPos" type="Position2D" parent="."]
 
 [node name="Glitches" parent="ShaderPos" instance=ExtResource( 6 )]
-margin_left = 9.90617
+margin_left = 10.2211
 margin_top = 3.52373
-margin_right = 609.906
+margin_right = 610.221
 margin_bottom = 323.524
 
 [connection signal="health" from="Level/Player" to="Level/UI CanvasLayer" method="_on_Player_health"]
