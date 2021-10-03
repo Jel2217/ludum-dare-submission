@@ -47,8 +47,8 @@ func _physics_process(delta):
 			if pathfind_to(player.position, delta): # If pathfinding has finished
 				state = states.ATTACKING
 		states.DEAD:
-			pass
-			#queue_free()
+			set_collision_mask(0)
+			set_collision_layer(0)
 
 
 
