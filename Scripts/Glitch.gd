@@ -28,10 +28,10 @@ func _ready():
 		img.load("res://Images/Glitch Cards/pc.png")
 		img.resize(20,20,0)
 	elif card == 5:
-		img.load("res://Images/Glitch Cards/slime.png")
+		img.load("res://Images/Glitch Cards/heart-plus.png")
 		img.resize(20,20,0)
 	elif card == 6:
-		img.load("res://Images/Glitch Cards/teleport.png")
+		img.load("res://Images/Glitch Cards/heart-minus.png")
 		img.resize(20,20,0)
 	elif card == 7:
 		img.load("res://Images/Glitch Cards/whirlwind.png")
@@ -67,9 +67,11 @@ func _on_Timer_timeout():
 			elif effect == 3:
 				glitch_fx.deepfried()
 		elif card == 5:
-				glitch_fx.enemy()
+				#glitch_fx.enemy()
+				glitch_fx.heal()
 		elif card == 6:
-				glitch_fx.teleport()
+				#glitch_fx.teleport()
+				glitch_fx.poisin()
 		elif card == 7:
 				glitch_fx.whirl()
 		elif card == 8:
