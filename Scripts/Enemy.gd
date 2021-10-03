@@ -81,14 +81,9 @@ func update_healthbar(value):
 	if value < healthbar.max_value:
 		healthbar.show()
 	healthbar.value = value
-	if value <= 0:
-		if !dead:
-			dead = true
-			
-
-			
 
 func update_health(value):
+	if state == states.DEAD: return
 	update_healthbar(value)
 	health = value
 	if health <= 0:
