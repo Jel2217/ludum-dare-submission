@@ -31,3 +31,45 @@ margin_left = 58.0
 margin_right = 83.0
 margin_bottom = 29.0
 texture = ExtResource( 1 )
+
+[node name="TextureRect4" type="TextureRect" parent="Heart Hbox"]
+margin_left = 87.0
+margin_right = 112.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect5" type="TextureRect" parent="Heart Hbox"]
+margin_left = 116.0
+margin_right = 141.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect6" type="TextureRect" parent="Heart Hbox"]
+margin_left = 145.0
+margin_right = 170.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect7" type="TextureRect" parent="Heart Hbox"]
+margin_left = 174.0
+margin_right = 199.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect8" type="TextureRect" parent="Heart Hbox"]
+margin_left = 203.0
+margin_right = 228.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect9" type="TextureRect" parent="Heart Hbox"]
+margin_left = 232.0
+margin_right = 257.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect10" type="TextureRect" parent="Heart Hbox"]
+margin_left = 261.0
+margin_right = 286.0
+margin_bottom = 29.0
+texture = ExtResource( 1 )

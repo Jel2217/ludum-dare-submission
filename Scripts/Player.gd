@@ -16,8 +16,8 @@ onready var sword = $Pivot/laser_sword
 var projectile = preload("res://Scenes/Projectile.tscn")
 
 
-var max_health = 6
-var health = 6
+var max_health = 20
+var health = 20
 signal health(value)
 
 func get_input():
