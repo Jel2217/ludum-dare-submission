@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/GreenSlime.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UIOverlay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Purple Slime.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 143.397, -95.7779, 144.571, 63.6488, -144.238, 64.0244, -144.238, -96.0595 )
@@ -58,6 +59,9 @@ position = Vector2( 0, -90 )
 
 [node name="Yellow_Slime" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 140, -90 )
+
+[node name="Purple Slime" parent="Level" instance=ExtResource( 10 )]
+position = Vector2( 140, 0 )
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
 
