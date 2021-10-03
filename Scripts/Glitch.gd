@@ -44,7 +44,7 @@ func _ready():
 
 func _on_Timer_timeout():
 	i = i + 1
-	rand = round(rand_range(0,75))
+	rand = round(rand_range(0,65))
 	if rand == 1   and i<130 and i>20:
 		self.play("FallOff")
 		crumble.set_emitting(true)

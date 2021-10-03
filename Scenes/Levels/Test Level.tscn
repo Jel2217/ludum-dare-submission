@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BlueSlime.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/YellowSlime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI CanvasLayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GlitchFX.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/GreenSlime.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UIOverlay.tscn" type="PackedScene" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 143.397, -95.7779, 144.571, 63.6488, -144.238, 64.0244, -144.238, -96.0595 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -144.238, -96.0595, -144.238, 64.0244, 144.571, 63.6488, 143.397, -95.7779 ) ]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2( 160, 90 )
+
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 3
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -458762, 14, 0, -458761, 13, 0, -458760, 13, 0, -458759, 13, 0, -458758, 13, 0, -458757, 13, 0, -458756, 13, 0, -458755, 13, 0, -458754, 13, 0, -458753, 13, 0, -524288, 13, 0, -524287, 13, 0, -524286, 13, 0, -524285, 13, 0, -524284, 13, 0, -524283, 13, 0, -524282, 13, 0, -524281, 13, 0, -524280, 13, 0, -524279, 13, 0, -524278, 11, 0, -393226, 3, 0, -393225, 15, 0, -393224, 15, 0, -393223, 15, 0, -393222, 15, 0, -393221, 15, 0, -393220, 15, 0, -393219, 15, 0, -393218, 15, 0, -393217, 15, 0, -458752, 15, 0, -458751, 15, 0, -458750, 15, 0, -458749, 15, 0, -458748, 15, 0, -458747, 15, 0, -458746, 15, 0, -458745, 15, 0, -458744, 15, 0, -458743, 15, 0, -458742, 10, 0, -327690, 3, 0, -327689, 2, 0, -327688, 2, 0, -327687, 2, 0, -327686, 2, 0, -327685, 2, 0, -327684, 2, 0, -327683, 2, 0, -327682, 2, 0, -327681, 2, 0, -393216, 2, 0, -393215, 2, 0, -393214, 2, 0, -393213, 2, 0, -393212, 2, 0, -393211, 2, 0, -393210, 2, 0, -393209, 2, 0, -393208, 2, 0, -393207, 2, 0, -393206, 10, 0, -262154, 3, 0, -262153, 2, 0, -262152, 2, 0, -262151, 2, 0, -262150, 2, 0, -262149, 0, 0, -262148, 2, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -327673, 2, 0, -327672, 2, 0, -327671, 2, 0, -327670, 10, 0, -327657, 4, 0, -196618, 4, 0, -196617, 2, 0, -196616, 1, 0, -196615, 2, 0, -196614, 2, 0, -196613, 2, 0, -196612, 2, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 2, 0, -262140, 2, 0, -262139, 2, 0, -262138, 2, 0, -262137, 2, 0, -262136, 2, 0, -262135, 2, 0, -262134, 10, 0, -131082, 3, 0, -131081, 2, 0, -131080, 2, 0, -131079, 2, 0, -131078, 1, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 1, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -196600, 2, 0, -196599, 2, 0, -196598, 10, 0, -65546, 3, 0, -65545, 2, 0, -65544, 2, 0, -65543, 2, 0, -65542, 2, 0, -65541, 2, 0, -65540, 2, 0, -65539, 1, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 2, 0, -131069, 0, 0, -131068, 2, 0, -131067, 2, 0, -131066, 1, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 10, 0, -10, 4, 0, -9, 2, 0, -8, 1, 0, -7, 2, 0, -6, 2, 0, -5, 1, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 10, 0, 65526, 3, 0, 65527, 2, 0, 65528, 2, 0, 65529, 2, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 0, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 10, 0, 131062, 3, 0, 131063, 2, 0, 131064, 2, 0, 131065, 1, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 0, 0, 65544, 2, 0, 65545, 2, 0, 65546, 10, 0, 196598, 4, 0, 196599, 2, 0, 196600, 0, 0, 196601, 2, 0, 196602, 2, 0, 196603, 2, 0, 196604, 1, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 1, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 10, 0, 262134, 5, 0, 262135, 6, 0, 262136, 6, 0, 262137, 6, 0, 262138, 6, 0, 262139, 6, 0, 262140, 6, 0, 262141, 6, 0, 262142, 6, 0, 262143, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 196615, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 8, 0 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Level"]
+visible = false
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Level/Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Player" parent="Level" instance=ExtResource( 2 )]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Level/Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+process_mode = 0
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Blue_Slime" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( -120, -90 )
+
+[node name="GreenSlime" parent="Level" instance=ExtResource( 8 )]
+position = Vector2( 0, -90 )
+
+[node name="Yellow_Slime" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 140, -90 )
+
+[node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
+
+[node name="Control" parent="Level" instance=ExtResource( 9 )]
+margin_left = -160.0
+margin_top = -91.3138
+margin_right = -160.0
+margin_bottom = -91.3138
+
+[node name="ShaderPos" type="Position2D" parent="."]
+
+[node name="Glitches" parent="ShaderPos" instance=ExtResource( 6 )]
+margin_left = 9.90617
+margin_top = 3.52373
+margin_right = 609.906
+margin_bottom = 323.524
+
+[connection signal="health" from="Level/Player" to="Level/UI CanvasLayer" method="_on_Player_health"]

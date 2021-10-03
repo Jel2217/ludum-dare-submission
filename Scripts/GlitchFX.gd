@@ -3,7 +3,7 @@ extends Control
 var explosion = preload("res://Scenes/Effects/Explosion.tscn")
 var enemy = preload("res://Scenes/BlueSlime.tscn")
 
-onready var player = get_tree().get_root().find_node("Player")
+onready var player = get_parent().get_parent().get_node("Player")
 
 var numEnemies = 3
 

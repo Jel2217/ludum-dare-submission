@@ -11,14 +11,14 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 7 )
 shader_param/rotation = 0.5
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=5]
@@ -50,7 +50,7 @@ __meta__ = {
 
 [node name="Whirl" type="TextureRect" parent="."]
 visible = false
-material = SubResource( 6 )
+material = SubResource( 2 )
 margin_left = -32000.0
 margin_top = -18000.0
 margin_right = 32000.0
@@ -63,7 +63,7 @@ __meta__ = {
 
 [node name="Normalised" type="TextureRect" parent="."]
 visible = false
-material = SubResource( 4 )
+material = SubResource( 3 )
 margin_left = -32000.0
 margin_top = -18000.0
 margin_right = 32000.0
@@ -76,7 +76,7 @@ __meta__ = {
 
 [node name="Deep Fried" type="TextureRect" parent="."]
 visible = false
-material = SubResource( 3 )
+material = SubResource( 4 )
 margin_left = -32000.0
 margin_top = -18000.0
 margin_right = 32000.0
