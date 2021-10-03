@@ -50,10 +50,7 @@ func _physics_process(delta):
 		states.DEAD:
 			set_collision_mask(0)
 			set_collision_layer(0)
-	if lunging:
-		move_and_collide(velocity*delta*3)
-	if retreating:
-		move_and_collide(-velocity*delta*5)
+	$Barrel.rotation = $Barrel/Position2D.position.angle_to(player.position)
 
 
 

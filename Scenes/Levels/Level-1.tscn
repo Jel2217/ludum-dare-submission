@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemy2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GlitchFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
 
@@ -44,6 +45,8 @@ script = ExtResource( 7 )
 
 [node name="Enemy1" parent="Level" instance=ExtResource( 3 )]
 position = Vector2( -21.1416, -67.9743 )
+
+[node name="Yellow_Slime" parent="Level" instance=ExtResource( 4 )]
 
 [node name="ShaderPos" type="Position2D" parent="."]
 
