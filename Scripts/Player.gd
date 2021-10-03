@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-enum states {IDLE, MOVING}
+enum states {IDLE, MOVING, DEAD}
 var state = states.IDLE
 
 var speed = 150
@@ -14,6 +14,11 @@ onready var sprite = $AnimatedSprite
 onready var sword = $Pivot/laser_sword 
 
 var projectile = preload("res://Scenes/Projectile.tscn")
+
+
+var max_health = 6
+var health = 6
+signal health(value)
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -36,6 +41,8 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
+	if Input.is_action_just_pressed("test"):
+		update_health(health - 1)
 	velocity = move_and_slide(velocity)
 	sword.look_at(get_global_mouse_position())
 	sword.rotation_degrees -= 90
@@ -48,6 +55,8 @@ func _physics_process(_delta):
 			sprite.play("idle")
 		states.MOVING:
 			sprite.play("moving")
+		states.DEAD:
+			queue_free()
 
 
 func fire_projectile():
@@ -58,3 +67,10 @@ func fire_projectile():
 	proj.rotation_degrees += 90
 	yield(get_tree().create_timer(fire_delay), "timeout")
 	can_fire = true
+
+func update_health(value):
+	if state == states.DEAD: return
+	if value <= 0: state = states.DEAD
+	health = value
+	emit_signal("health", value)
+	
