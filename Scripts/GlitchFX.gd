@@ -10,6 +10,7 @@ var numEnemies = 3
 export var x = 100
 export var y = 100
 
+
 func invert():
 	get_node("Invert").visible = true
 	$ScreenTimer.start()
@@ -74,6 +75,12 @@ func _on_InvisTimer_timeout():
 
 func _on_FatTimer_timeout():
 	player.speed = 150
+
+func heal():
+	player.update_health(player.health + 2)
+
+func poisin():
+	player.update_health(player.health - 2)
 
 
 func _on_ScreenTimer_timeout():
