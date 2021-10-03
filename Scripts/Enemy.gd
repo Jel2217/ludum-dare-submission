@@ -22,7 +22,8 @@ var points_index = 0
 var velocity = Vector2.ZERO
 var glob_loc
 var epsilon = 1
-
+var lunging = false
+var retreating = false
 var enemy_stopping_distance = 50
 var is_attacking = false
 enum states {IDLE, ATTACKING, MOVING, DEAD}
@@ -49,6 +50,10 @@ func _physics_process(delta):
 		states.DEAD:
 			set_collision_mask(0)
 			set_collision_layer(0)
+	if lunging:
+		move_and_collide(velocity*delta*3)
+	if retreating:
+		move_and_collide(-velocity*delta*5)
 
 
 
@@ -104,8 +109,23 @@ func _on_Timer_timeout():
 func _on_AttackTimer_timeout():
 	if (glob_loc - position).length() < enemy_stopping_distance + 10:
 		is_attacking = true
-		print()
-		velocity = (glob_loc-position) * speed
-		$AttackTimer.start()
+		velocity = (glob_loc-position)
+		lunging = true
+		retreating = false
+		$WaitTimer.start()
 	else:
 		is_attacking = false
+		retreating = false
+		lunging = false
+
+
+func _on_WaitTimer_timeout():
+	velocity = (glob_loc-position)
+	retreating = true
+	lunging = false
+	$StopTimer.start()
+	$AttackTimer.start()
+
+
+func _on_StopTimer_timeout():
+	retreating = false

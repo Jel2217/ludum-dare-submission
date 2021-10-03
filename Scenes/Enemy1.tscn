@@ -25,6 +25,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -48,10 +49,17 @@ __meta__ = {
 one_shot = true
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 1.5
 one_shot = true
 
 [node name="WaitTimer" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
