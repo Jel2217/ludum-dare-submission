@@ -57,4 +57,7 @@ position = Vector2( 5.58964, 9.59416 )
 wait_time = 1.5
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -4,7 +4,7 @@
 [ext_resource path="res://Audio/zapsplat_cartoon_bird_poop_hit_surface_splat_squelch_007_74096.mp3" type="AudioStream" id=2]
 
 [sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0.360784, 0, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.207843, 0, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )

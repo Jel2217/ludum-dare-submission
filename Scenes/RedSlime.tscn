@@ -15,7 +15,7 @@ var green_bar = preload(\"res://Images/UI/EnemyHealthBar/greenbar.png\")
 var red_bar = preload(\"res://Images/UI/EnemyHealthBar/redbar.png\")
 var yellow_bar = preload(\"res://Images/UI/EnemyHealthBar/yellowbar.png\")
 var redbullet = preload(\"res://Scenes/RedBullet.tscn\")
-var splat = preload(\"res://Scenes/Effects/YellowSplat.tscn\")
+var splat = preload(\"res://Scenes/Effects/RedSplat.tscn\")
 onready var healthbar = $Healthbar
 
 var max_health = 100
@@ -132,7 +132,7 @@ func _on_AttackTimer_timeout():
 		$AttackTimer.start()
 "
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -161,7 +161,8 @@ texture = ExtResource( 6 )
 position = Vector2( 8, -0.5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
