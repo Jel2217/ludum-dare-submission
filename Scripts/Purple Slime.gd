@@ -6,7 +6,7 @@ var green_bar = preload("res://Images/UI/EnemyHealthBar/greenbar.png")
 var red_bar = preload("res://Images/UI/EnemyHealthBar/redbar.png")
 var yellow_bar = preload("res://Images/UI/EnemyHealthBar/yellowbar.png")
 var purplebullet = preload("res://Scenes/PurpleBullet.tscn")
-var splat = preload("res://Scenes/Effects/YellowSplat.tscn")
+var splat = preload("res://Scenes/Effects/PurpleSplat.tscn")
 onready var healthbar = $Healthbar
 
 var max_health = 100

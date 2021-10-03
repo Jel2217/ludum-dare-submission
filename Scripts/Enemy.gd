@@ -5,7 +5,7 @@ extends KinematicBody2D
 var green_bar = preload("res://Images/UI/EnemyHealthBar/greenbar.png")
 var red_bar = preload("res://Images/UI/EnemyHealthBar/redbar.png")
 var yellow_bar = preload("res://Images/UI/EnemyHealthBar/yellowbar.png")
-var splat = preload("res://Scenes/Effects/Splat.tscn")
+var splat = preload("res://Scenes/Effects/GreenSplat.tscn")
 onready var healthbar = $Healthbar
 
 var max_health = 100

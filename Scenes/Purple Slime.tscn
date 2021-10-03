@@ -18,7 +18,9 @@ animations = [ {
 radius = 3.81562
 height = 9.92657
 
-[node name="Purple Slime" type="KinematicBody2D"]
+[node name="Purple Slime" type="KinematicBody2D" groups=[
+"enemy",
+]]
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
