@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Images/Enemies/Red Slime/Redslime2.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Enemy2.gd" type="Script" id=2]
+[ext_resource path="res://Images/Enemies/Red Slime/Redslime1.png" type="Texture" id=3]
+[ext_resource path="res://Images/UI/EnemyHealthBar/greenbar.png" type="Texture" id=4]
+[ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=5]
+[ext_resource path="res://Images/Enemies/Red Slime/RedSlimeGun3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.65628
+height = 13.1527
+
+[node name="Red_Slime" type="KinematicBody2D" groups=[
+"enemy",
+]]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2( 4, 5.6 )
+
+[node name="Barrel" type="Sprite" parent="Pivot"]
+texture = ExtResource( 6 )
+
+[node name="Muzzle" type="Position2D" parent="Pivot/Barrel"]
+position = Vector2( 8, -0.5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.40458, 7.78975 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Healthbar" type="TextureProgress" parent="."]
+margin_left = -12.0
+margin_top = -3.5
+margin_right = 12.0
+margin_bottom = 1.5
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

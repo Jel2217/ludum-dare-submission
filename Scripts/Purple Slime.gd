@@ -5,7 +5,7 @@ extends KinematicBody2D
 var green_bar = preload("res://Images/UI/EnemyHealthBar/greenbar.png")
 var red_bar = preload("res://Images/UI/EnemyHealthBar/redbar.png")
 var yellow_bar = preload("res://Images/UI/EnemyHealthBar/yellowbar.png")
-var yellowbullet = preload("res://Scenes/YellowBullet.tscn")
+var purplebullet = preload("res://Scenes/PurpleBullet.tscn")
 var splat = preload("res://Scenes/Effects/YellowSplat.tscn")
 onready var healthbar = $Healthbar
 
@@ -114,7 +114,7 @@ func _on_Timer_timeout():
 
 func _on_AttackTimer_timeout():
 	if (player.position - position).length() < enemy_stopping_distance:
-		var bullet = yellowbullet.instance()
+		var bullet = purplebullet.instance()
 		add_child(bullet)
 		for muzzle in $Muzzles.get_children():
 			bullet.global_transform = muzzle.global_transform
