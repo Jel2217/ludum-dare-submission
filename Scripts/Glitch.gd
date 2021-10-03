@@ -67,7 +67,7 @@ func _on_Timer_timeout():
 		elif card == 6:
 				glitch_fx.teleport()
 		elif card == 7:
-				glitch_fx.wirl()
+				glitch_fx.whirl()
 		
 		i = 140
 	if i >= 150:
