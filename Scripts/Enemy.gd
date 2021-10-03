@@ -12,8 +12,8 @@ var max_health = 100
 var health = 100
 var dead = false
 
-var move_speed = 7500
-var speed = 100
+var move_speed = 8000
+var speed = 150
 onready var nav =  get_node("/root/Control/Level/Navigation2D")
 onready var player =  get_node("/root/Control/Level/Player")
 var path
@@ -24,7 +24,7 @@ var glob_loc
 var epsilon = 1
 var lunging = false
 var retreating = false
-var enemy_stopping_distance = 50
+var enemy_stopping_distance = 60
 var is_attacking = false
 enum states {IDLE, ATTACKING, MOVING, DEAD}
 var state = states.MOVING
