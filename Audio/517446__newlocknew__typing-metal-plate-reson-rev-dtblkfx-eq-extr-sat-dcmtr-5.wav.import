@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/517446__newlocknew__typing-metal-plate-reson-rev-dtblkfx-eq-extr-sat-dcmtr-5.wav-fc8ff2ef0dc4d1a01d436f2f1faa444b.sample"
+
+[deps]
+
+source_file="res://Audio/517446__newlocknew__typing-metal-plate-reson-rev-dtblkfx-eq-extr-sat-dcmtr-5.wav"
+dest_files=[ "res://.import/517446__newlocknew__typing-metal-plate-reson-rev-dtblkfx-eq-extr-sat-dcmtr-5.wav-fc8ff2ef0dc4d1a01d436f2f1faa444b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

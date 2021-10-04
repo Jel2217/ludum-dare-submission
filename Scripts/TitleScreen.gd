@@ -43,7 +43,7 @@ func _on_Settings_pressed():
 		elif child is HSlider: child.editable = true
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://Scenes/LevelMenu.tscn")
+	get_tree().change_scene("res://Scenes/Backstory.tscn")
 	pass
 
 # Settings screen calls
