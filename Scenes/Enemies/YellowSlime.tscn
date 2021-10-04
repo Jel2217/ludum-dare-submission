@@ -41,6 +41,7 @@ offset = Vector2( 4.918, -1.08796 )
 position = Vector2( 12.142, -0.732961 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.980392, 0.117647, 1 )
 frames = SubResource( 1 )
 frame = 1
 playing = true

@@ -11,25 +11,9 @@
 [ext_resource path="res://Scenes/Experience bar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UIOverlay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=12]
 
-[sub_resource type="Environment" id=1]
-background_mode = 4
-background_energy = 16.0
-ambient_light_color = Color( 0.172549, 0, 0.290196, 1 )
-fog_color = Color( 0.501961, 0.6, 0.701961, 1 )
-fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
-auto_exposure_min_luma = 0.25
-auto_exposure_max_luma = 16.0
-glow_enabled = true
-glow_intensity = 2.5
-glow_strength = 1.25
-glow_bloom = 0.4
-glow_hdr_threshold = 3.0
-adjustment_enabled = true
-adjustment_contrast = 1.1
-adjustment_saturation = 0.82
-
-[sub_resource type="NavigationPolygon" id=2]
+[sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 211.461, 1.02011, 382.197, 1.61518, 526.493, 2.92325, 524.78, 46.6082, 382.108, 47.056, 211.46, 46.071, 63.6276, 1.02011, -62.181, 62.4227, -61.5136, -62.0511, 63.9613, -63.3859, 62.4548, 62.038, 63.6276, 46.4047, 381, 276, 381, 445, 209, 446, 210, 275, 273, 274, 317.515, 273.99, 211.46, -61.7174, 382.32, -62.0511, 273.025, 109.716, 211.794, 109.476, 318, 109.892, 381.986, 110.143, 1397.7, -102.506, 1397.7, 179.194, 1117.36, 179.194, 1118.2, -99.1423, 602.3, 274.489, 755.806, 279.828, 758.476, 433.335, 604.969, 434.67 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 6, 10 ), PoolIntArray( 11, 10, 6 ), PoolIntArray( 12, 13, 14, 15, 16, 17 ), PoolIntArray( 18, 19, 1, 0 ), PoolIntArray( 5, 11, 6 ), PoolIntArray( 20, 21, 5, 4, 22 ), PoolIntArray( 4, 23, 22 ), PoolIntArray( 16, 20, 22, 17 ), PoolIntArray( 24, 25, 26, 27 ), PoolIntArray( 28, 29, 30, 31 ) ]
 outlines = [ PoolVector2Array( -61.5136, -62.0511, -62.181, 62.4227, 62.4548, 62.038, 63.6276, 46.4047, 211.46, 46.071, 211.794, 109.476, 273.025, 109.716, 273, 274, 210, 275, 209, 446, 381, 445, 381, 276, 317.515, 273.99, 318, 109.892, 381.986, 110.143, 382.108, 47.056, 524.78, 46.6082, 526.493, 2.92325, 382.197, 1.61518, 382.32, -62.0511, 211.46, -61.7174, 211.461, 1.02011, 63.6276, 1.02011, 63.9613, -63.3859 ), PoolVector2Array( 1118.2, -99.1423, 1117.36, 179.194, 1397.7, 179.194, 1397.7, -102.506 ), PoolVector2Array( 602.3, 274.489, 755.806, 279.828, 758.476, 433.335, 604.969, 434.67 ) ]
@@ -41,8 +25,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+[node name="WorldEnvironment" parent="." instance=ExtResource( 12 )]
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( 160, 90 )
@@ -69,7 +52,7 @@ visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Level/Navigation2D"]
 visible = false
-navpoly = SubResource( 2 )
+navpoly = SubResource( 1 )
 
 [node name="Player" parent="Level" instance=ExtResource( 2 )]
 collision_layer = 3
@@ -83,6 +66,7 @@ smoothing_enabled = true
 script = ExtResource( 7 )
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
+layer = 3
 
 [node name="XpBar" parent="Level/UI CanvasLayer" instance=ExtResource( 9 )]
 

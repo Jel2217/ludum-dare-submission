@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/Enemies/Blue Slime/slime1.png" type="Texture" id=1]
 [ext_resource path="res://Images/Enemies/Blue Slime/slime2.png" type="Texture" id=3]
@@ -101,10 +101,13 @@ func pathfind_to(location, delta):
 
 func update_healthbar(value):
 	healthbar.texture_progress = green_bar
+	healthbar.modulate = Color(0, 0.4, 0)
 	if value < healthbar.max_value * 0.7:
 		healthbar.texture_progress = yellow_bar
+		healthbar.modulate = Color(0.4, 0.4, 0)
 	if value < healthbar.max_value * 0.35:
 		healthbar.texture_progress = red_bar
+		healthbar.modulate = Color(0.4, 0, 0)
 	if value < healthbar.max_value:
 		healthbar.show()
 	healthbar.value = value
@@ -117,7 +120,7 @@ func update_health(value):
 		state = states.DEAD
 		var instance = splat.instance()
 		$Sprite.hide()
-		$Healthbar.hide()
+		healthbar.hide()
 		instance.start()
 		add_child(instance)
 		$Timer.start()
@@ -156,7 +159,10 @@ func _on_StopTimer_timeout():
 "
 
 [sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( 3.01272, 2.59554, -6.09004, 2.48175, -10.0725, 6.80556, -10.4139, 11.3569, 9.38465, 11.5845, 8.47438, 5.7815 )
+polygon = PoolVector2Array( -12.5483, -6.56981, -12.5483, -0.978275, 12.1203, -1.14273, 11.9558, -6.56981 )
+
+[sub_resource type="CanvasItemMaterial" id=5]
+light_mode = 1
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -170,6 +176,9 @@ animations = [ {
 radius = 3.72738
 height = 9.09635
 
+[sub_resource type="CanvasItemMaterial" id=6]
+light_mode = 1
+
 [node name="Enemy1" type="KinematicBody2D" groups=[
 "enemy",
 ]]
@@ -182,11 +191,11 @@ script = SubResource( 1 )
 occluder = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.196078, 0.196078, 1, 1 )
+modulate = Color( 0, 0.247059, 1, 1 )
 light_mask = 2
+material = SubResource( 5 )
 rotation = -3.14159
 frames = SubResource( 2 )
-frame = 1
 playing = true
 flip_v = true
 
@@ -196,6 +205,7 @@ rotation = 1.5708
 shape = SubResource( 3 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
+material = SubResource( 6 )
 margin_left = -12.0
 margin_top = -6.0
 margin_right = 12.0

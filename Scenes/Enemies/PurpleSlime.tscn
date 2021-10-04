@@ -28,11 +28,12 @@ modulate = Color( 1.75, 1.25, 2, 1 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.121569, 1, 1 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0.583992, 7.75876 )
 rotation = 1.5708
 shape = SubResource( 2 )

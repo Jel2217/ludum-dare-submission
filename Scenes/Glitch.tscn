@@ -81,9 +81,10 @@ anims/FallOff = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 559.6
-margin_right = 584.6
-margin_bottom = 29.9998
+margin_left = 68.2667
+margin_top = 15.0
+margin_right = 93.2666
+margin_bottom = 44.9998
 rect_pivot_offset = Vector2( 12.5, 15 )
 stretch_mode = 2
 __meta__ = {

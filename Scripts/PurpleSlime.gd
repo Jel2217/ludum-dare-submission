@@ -95,10 +95,13 @@ func pathfind_to(location, delta):
 
 func update_healthbar(value):
 	healthbar.texture_progress = green_bar
+	healthbar.modulate = Color(0, 0.4, 0)
 	if value < healthbar.max_value * 0.7:
 		healthbar.texture_progress = yellow_bar
+		healthbar.modulate = Color(0.4, 0.4, 0)
 	if value < healthbar.max_value * 0.35:
 		healthbar.texture_progress = red_bar
+		healthbar.modulate = Color(0.4, 0, 0)
 	if value < healthbar.max_value:
 		healthbar.show()
 	healthbar.value = value
