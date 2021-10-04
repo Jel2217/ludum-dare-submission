@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-var full_heart = preload("res://Images/UI/Hearts/heart1.png")
-var half_heart = preload("res://Images/UI/Hearts/heart2.png")
-var empty_heart = preload("res://Images/UI/Hearts/heart3.png")
+var full_heart = preload("res://Images/UI/Hearts/heart.png")
+var half_heart = preload("res://Images/UI/Hearts/heart_half.png")
+var empty_heart = preload("res://Images/UI/Hearts/heart_empty.png")
 var level_file = "user://level.save"
 onready var heart_hbox = $"Heart Hbox"
 
