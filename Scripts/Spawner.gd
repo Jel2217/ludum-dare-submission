@@ -34,6 +34,7 @@ func _process(delta):
 			current_wave += 1
 			if current_wave > waves:
 				player_in_room = false
+				finished = true
 				set_block_tile_map(false)
 				current_wave = 0
 			else:
@@ -49,7 +50,7 @@ func _process(delta):
 					spawn_enemy(slime_yellow)
 
 func _on_Spawner_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and not finished:
 		set_block_tile_map(true)
 		player_in_room = true
 		

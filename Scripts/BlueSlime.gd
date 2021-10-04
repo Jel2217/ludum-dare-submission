@@ -14,8 +14,8 @@ var dead = false
 
 var move_speed = 8000
 var speed = 150
-onready var nav =  get_node("/root/Control/Level/Navigation2D")
-onready var player =  get_node("/root/Control/Level/Player")
+onready var nav =  get_node("../Navigation2D")
+onready var player =  get_node("../Player")
 var path
 var points
 var points_index = 0
@@ -41,7 +41,7 @@ func enable_activated_by_glitch():
 	activated_by_glitch = true
 
 func _physics_process(delta):
-	avelocity = (player.position- position).normalized()
+	velocity = (player.position- position).normalized()
 	match state:
 		states.IDLE:
 			pass
