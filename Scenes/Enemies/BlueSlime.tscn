@@ -191,15 +191,17 @@ script = SubResource( 1 )
 occluder = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0, 0.247059, 1, 1 )
+modulate = Color( 0.188235, 0.639216, 0.847059, 1 )
 light_mask = 2
 material = SubResource( 5 )
 rotation = -3.14159
 frames = SubResource( 2 )
+frame = 1
 playing = true
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.525555, 7.14762 )
 rotation = 1.5708
 shape = SubResource( 3 )
