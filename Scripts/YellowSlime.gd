@@ -15,8 +15,8 @@ var dead = false
 
 var move_speed = 7500
 var speed = 100
-onready var nav =  get_node("/root/Control/Level/Navigation2D")
-onready var player =  get_node("/root/Control/Level/Player")
+onready var nav =  get_node("../Navigation2D")
+onready var player =  get_node("../Player")
 var path
 var points
 var points_index = 0
@@ -35,9 +35,9 @@ var activated_by_glitch = false
 
 func _ready():
 	healthbar.hide()
-	if $"../Level".level > 5:
+	if $"../../Level".level > 5:
 		max_health *= 3
-	if $"../Level".level > 10:
+	if $"../../Level".level > 10:
 		max_health *= 6
 	health = max_health
 	healthbar.max_value = max_health
