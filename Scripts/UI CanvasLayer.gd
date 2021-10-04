@@ -22,10 +22,10 @@ func _on_Player_health(value):
 func player_won():
 	if load_score() == get_parent().level:
 		save_level(get_parent().level+1)
-	print("player won")
+	$WinTimer.start()
 
 func player_lost():
-	print("player lost")
+	$LoseTimer.start()
 	
 func save_level(level):
 	var file = File.new()
@@ -43,3 +43,11 @@ func load_score():
 	else:
 		var level = 1
 		return level
+
+
+func _on_LoseTimer_timeout():
+	get_tree().change_scene("res://Scenes/Lose.tscn")
+
+
+func _on_WinTimer_timeout():
+	get_tree().change_scene("res://Scenes/Win.tscn")
