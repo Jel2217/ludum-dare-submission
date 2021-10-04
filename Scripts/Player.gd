@@ -79,7 +79,7 @@ func update_health(value):
 	
 func buff(level):
 	damage = 20 + (2*level)
-	speed = 150 + (10*level)
+	speed = 125 + (5*level)
 	bspeed = 700 + (25*level)
 	
 func enemy_hit():
