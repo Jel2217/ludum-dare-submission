@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Font/fontt.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=2]
@@ -57,6 +57,49 @@ bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 
 [sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.360784, 0.360784, 0.360784, 1 )
+
+[sub_resource type="GDScript" id=26]
+script/source = "extends HSlider
+
+
+export var audio_bus_name := \"Music\"
+var volume_file = \"user://volmusic.save\"
+
+onready var _bus := AudioServer.get_bus_index(audio_bus_name)
+
+
+func _ready() -> void:
+	value = load_vol()
+	AudioServer.set_bus_volume_db(_bus, linear2db(value))
+	
+
+
+func _on_Volume_value_changed(value: float):
+	save_vol(value)
+	AudioServer.set_bus_volume_db(_bus, linear2db(value*2))
+#	$\"../../AudioStreamPlayer\".volume_db = linear2db(value)
+
+
+func _on_Volume_mouse_exited():
+	release_focus()
+
+func save_vol(volume):
+	var file = File.new()
+	file.open(volume_file, File.WRITE)
+	file.store_var(volume)
+	file.close()
+	
+func load_vol():
+	var file = File.new()
+	if file.file_exists(volume_file):
+		file.open(volume_file, File.READ)
+		var volume = file.get_var()
+		file.close()
+		return volume
+	else:
+		var volume = 1.0
+		return volume
+"
 
 [sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.392157, 0.0862745, 0.0862745, 1 )
@@ -166,7 +209,7 @@ margin_top = 61.0
 margin_right = 480.0
 margin_bottom = 118.0
 custom_fonts/font = ExtResource( 1 )
-text = "Volume"
+text = "Music Volume"
 align = 1
 
 [node name="Volume" type="HSlider" parent="Settings"]
@@ -179,12 +222,32 @@ custom_icons/grabber = ExtResource( 5 )
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = SubResource( 26 )
+
+[node name="Volume Label2" type="Label" parent="Settings"]
+margin_top = 122.0
+margin_right = 480.0
+margin_bottom = 179.0
+custom_fonts/font = ExtResource( 1 )
+text = "SFX Volume"
+align = 1
+
+[node name="Volume2" type="HSlider" parent="Settings"]
+margin_top = 142.0
+margin_right = 480.0
+margin_bottom = 158.0
+custom_icons/grabber_disabled = ExtResource( 5 )
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 5 )
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource( 4 )
 
 [node name="Back" type="Button" parent="Settings"]
-margin_top = 142.0
+margin_top = 162.0
 margin_right = 480.0
-margin_bottom = 199.0
+margin_bottom = 219.0
 focus_mode = 0
 custom_styles/hover = SubResource( 21 )
 custom_styles/pressed = SubResource( 22 )
@@ -204,5 +267,7 @@ wait_time = 0.5
 [connection signal="pressed" from="Settings/Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="mouse_exited" from="Settings/Volume" to="Settings/Volume" method="_on_Volume_mouse_exited"]
 [connection signal="value_changed" from="Settings/Volume" to="Settings/Volume" method="_on_Volume_value_changed"]
+[connection signal="mouse_exited" from="Settings/Volume2" to="Settings/Volume2" method="_on_Volume_mouse_exited"]
+[connection signal="value_changed" from="Settings/Volume2" to="Settings/Volume2" method="_on_Volume_value_changed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_Back_pressed"]
 [connection signal="timeout" from="audiotimer" to="." method="_on_audiotimer_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Other Resources/GlichConveyerAnim.tres" type="Animation" id=1]
 [ext_resource path="res://Scripts/Glitch.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Glitch.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FallOff"
@@ -80,8 +81,8 @@ anims/FallOff = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 640.0
-margin_right = 665.0
+margin_left = 559.6
+margin_right = 584.6
 margin_bottom = 29.9998
 rect_pivot_offset = Vector2( 12.5, 15 )
 stretch_mode = 2
@@ -120,5 +121,10 @@ process_material = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="GlitchSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+bus = "SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,8 +1,8 @@
 extends HSlider
 
 
-export var audio_bus_name := "Master"
-var volume_file = "user://vol.save"
+export var audio_bus_name := "SFX"
+var volume_file = "user://volsfx.save"
 
 onready var _bus := AudioServer.get_bus_index(audio_bus_name)
 

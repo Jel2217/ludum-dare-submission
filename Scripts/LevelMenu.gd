@@ -44,6 +44,7 @@ func _on_NextButton_pressed():
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_ESCAPE:
+			AudioStreamManager.play("res://Audio/Select.wav")
 			get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 
 func _on_LevelGrid_level_selected(level):
