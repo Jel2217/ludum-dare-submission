@@ -4,12 +4,11 @@ var story_path = "user://story.save"
 
 func _ready():
 	if load_story():
-		pass
-		#get_tree().change_scene("res://Scenes/LevelMenu.tscn")
-	#else:
-	save_story(true)
-	$AnimationPlayer.play("Text")
-	$Timer.start()
+		get_tree().change_scene("res://Scenes/LevelMenu.tscn")
+	else:
+		save_story(true)
+		$AnimationPlayer.play("Text")
+		$Timer.start()
 
 	
 func save_story(s):

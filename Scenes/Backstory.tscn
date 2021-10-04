@@ -26,10 +26,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.3, 2.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.3, 2.9, 30.6, 33 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ 0.0, 1.0, 1.0, 0.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimationPlayer/Audio:playing")
@@ -42,6 +42,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, true, true, true, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationPlayer/Label:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 30.7, 33.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
 }
 
 [node name="Backstory" type="Control"]
@@ -57,7 +69,6 @@ method_call_mode = 1
 anims/Text = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
-modulate = Color( 1, 1, 1, 0.269231 )
 margin_right = 640.0
 margin_bottom = 360.0
 color = Color( 0.133333, 0, 0.372549, 1 )
@@ -82,7 +93,7 @@ BE WARNED, When these slimes escaped, one attacked you,
 and the world started to feel a little UNSTABLE"
 align = 1
 valign = 1
-percent_visible = 0.0
+percent_visible = 0.793774
 __meta__ = {
 "_edit_use_anchors_": false
 }
