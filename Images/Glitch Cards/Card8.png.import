@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/help.png-c1fd8c913a2cafafc696c06d788c77ac.stex"
+path="res://.import/Card8.png-670daed136e23c464a920696c5ec8007.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Glitch Cards/help.png"
-dest_files=[ "res://.import/help.png-c1fd8c913a2cafafc696c06d788c77ac.stex" ]
+source_file="res://Images/Glitch Cards/Card8.png"
+dest_files=[ "res://.import/Card8.png-670daed136e23c464a920696c5ec8007.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

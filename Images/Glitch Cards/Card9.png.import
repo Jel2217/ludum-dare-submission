@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart-plus.png-7c726be56a4e20b33fa1a7dc8a3d12ee.stex"
+path="res://.import/Card9.png-cc1e6d1555aa8a9e8c420c974a495780.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Glitch Cards/heart-plus.png"
-dest_files=[ "res://.import/heart-plus.png-7c726be56a4e20b33fa1a7dc8a3d12ee.stex" ]
+source_file="res://Images/Glitch Cards/Card9.png"
+dest_files=[ "res://.import/Card9.png-cc1e6d1555aa8a9e8c420c974a495780.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
