@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/joshua-mclean_deities-get-takeout-too.ogg-84647cc387f85b4d0beb793528e8bf5f.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/joshua-mclean_deities-get-takeout-too.ogg"
+dest_files=[ "res://.import/joshua-mclean_deities-get-takeout-too.ogg-84647cc387f85b4d0beb793528e8bf5f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -18,6 +18,8 @@ config/icon="res://icon.png"
 [autoload]
 
 AudioStreamManager="*res://Scripts/audio_manager.gd"
+Audio="*res://Scenes/Audio.tscn"
+AudioScript="*res://Scripts/Audio.gd"
 
 [display]
 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Audio/Music/joshua-mclean_50s-bit.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Audio.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Music/Game_Music.ogg" type="AudioStream" id=3]
+
+[node name="Node" type="Node"]
+script = ExtResource( 2 )
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Music"
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"

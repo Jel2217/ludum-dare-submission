@@ -39,9 +39,11 @@ margin_top = 107.0
 margin_right = 620.0
 margin_bottom = 340.0
 size_flags_vertical = 3
+alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_right = 126.0
+visible = false
+margin_right = 256.0
 margin_bottom = 233.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )
@@ -61,12 +63,14 @@ __meta__ = {
 [node name="GridBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ClipControl"]
 margin_right = 852.0
 margin_bottom = 210.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Space" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox"]
-margin_right = 516.0
+margin_left = 5.0
+margin_right = 521.0
 margin_bottom = 210.0
 custom_constants/margin_right = 194
 
@@ -74,8 +78,8 @@ custom_constants/margin_right = 194
 margin_right = 322.0
 
 [node name="Space2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox"]
-margin_left = 520.0
-margin_right = 842.0
+margin_left = 525.0
+margin_right = 847.0
 margin_bottom = 210.0
 
 [node name="This node does nothing, but without it everything breaks" type="Control" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space2"]
@@ -86,6 +90,7 @@ margin_bottom = 210.0
 margin_right = 322.0
 
 [node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+visible = false
 margin_left = 494.0
 margin_right = 620.0
 margin_bottom = 233.0
