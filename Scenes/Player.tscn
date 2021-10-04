@@ -34,6 +34,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -59,7 +60,7 @@ bus = "SFX"
 scale = Vector2( 7, 7 )
 texture = ExtResource( 8 )
 color = Color( 1, 0.541176, 0, 1 )
-energy = 0.75
+energy = 0.6
 range_height = 200.0
 range_z_min = -200
 range_z_max = 200
