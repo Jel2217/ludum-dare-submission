@@ -79,5 +79,5 @@ func buff(level):
 	pass
 	
 func enemy_hit():
-	ui.on_enemy_killed()
+	xp.on_enemy_killed()
 	

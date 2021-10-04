@@ -19,6 +19,7 @@ margin_top = 35.0
 margin_right = 60.0
 margin_bottom = 325.0
 rect_min_size = Vector2( 24, 275 )
+max_value = 10.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
 fill_mode = 3
