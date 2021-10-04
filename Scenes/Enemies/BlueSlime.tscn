@@ -196,7 +196,6 @@ light_mask = 2
 material = SubResource( 5 )
 rotation = -3.14159
 frames = SubResource( 2 )
-frame = 1
 playing = true
 flip_v = true
 

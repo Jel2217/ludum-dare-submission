@@ -1,11 +1,10 @@
 [gd_resource type="Environment" load_steps=3 format=2]
 
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.33, 0.66, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 0.203922, 0.203922, 0.411765, 1, 0.992157, 0.882353, 0.882353, 1, 1, 0.953125, 0.953125, 1 )
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.0195312, 0.0195312, 0.0195312, 1, 0.816772, 0.703125, 1, 1 )
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
 [resource]
 background_mode = 4
@@ -20,12 +19,14 @@ glow_enabled = true
 glow_levels/1 = true
 glow_levels/2 = true
 glow_levels/4 = true
-glow_intensity = 2.01
+glow_intensity = 2.0
 glow_strength = 1.1
 glow_bloom = 0.25
-glow_hdr_threshold = 3.0
+glow_hdr_threshold = 2.0
+glow_hdr_luminance_cap = 10.0
+glow_hdr_scale = 3.0
 adjustment_enabled = true
 adjustment_brightness = 0.9
 adjustment_contrast = 1.1
 adjustment_saturation = 0.85
-adjustment_color_correction = SubResource( 4 )
+adjustment_color_correction = SubResource( 2 )
