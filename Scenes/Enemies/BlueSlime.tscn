@@ -196,12 +196,10 @@ light_mask = 2
 material = SubResource( 5 )
 rotation = -3.14159
 frames = SubResource( 2 )
-frame = 1
 playing = true
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -0.525555, 7.14762 )
 rotation = 1.5708
 shape = SubResource( 3 )
