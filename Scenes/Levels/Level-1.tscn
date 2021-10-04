@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Other Resources/Blocks.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/Experience bar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UIOverlay.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Level1.gd" type="Script" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 211.461, 1.02011, 382.197, 1.61518, 526.493, 2.92325, 524.78, 46.6082, 382.108, 47.056, 211.46, 46.071, 63.6276, 1.02011, -62.181, 62.4227, -61.5136, -62.0511, 63.9613, -63.3859, 62.4548, 62.038, 63.6276, 46.4047, 381, 276, 381, 445, 209, 446, 210, 275, 273, 274, 317.515, 273.99, 211.46, -61.7174, 382.32, -62.0511, 273.025, 109.716, 211.794, 109.476, 318, 109.892, 381.986, 110.143, 1397.7, -102.506, 1397.7, 179.194, 1117.36, 179.194, 1118.2, -99.1423, 602.3, 274.489, 755.806, 279.828, 758.476, 433.335, 604.969, 434.67 )
@@ -25,6 +26,7 @@ __meta__ = {
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( 160, 90 )
+script = ExtResource( 11 )
 
 [node name="LevelTileMap" type="TileMap" parent="Level"]
 tile_set = ExtResource( 1 )
