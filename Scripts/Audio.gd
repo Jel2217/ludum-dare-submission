@@ -12,10 +12,15 @@ func _process(_delta):
 			if(!GameMusic.playing):
 				Tmusic.stop()
 				GameMusic.playing = true
-		else:
+		elif !(get_tree().current_scene.name == "Backstory"):
 			if(!Tmusic.playing):
 				Tmusic.playing = true
 				GameMusic.stop()
+		else:
+			print("tt")
+			Tmusic.stop()
+			GameMusic.stop()
+		print(get_tree().current_scene.name)
 				
 		
 	

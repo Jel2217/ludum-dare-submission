@@ -30,7 +30,8 @@ func _input(event):
 		
 # Main screen calls
 func _on_Quit_pressed():
-	get_tree().quit()
+	AudioStreamManager.play("res://Audio/Select.wav")
+	$audiotimer.start()
 
 func _on_Settings_pressed():
 	AudioStreamManager.play("res://Audio/Select.wav")
@@ -114,3 +115,7 @@ func load_fs():
 		return fs
 
 	
+
+
+func _on_audiotimer_timeout():
+	get_tree().quit()
