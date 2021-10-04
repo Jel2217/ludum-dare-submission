@@ -78,14 +78,17 @@ position = Vector2( 1257.06, 39.6276 )
 [node name="Spawner1" parent="Level" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 219.095, 281.363 )
+blue_slime_amount = 3
 
 [node name="Spawner2" parent="Level" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 215.728, -56.4982 )
+waves = 2
 
 [node name="Spawner3" parent="Level" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 604.1, 280.24 )
+blue_slime_amount = 5
 
 [node name="ShaderPos" type="Position2D" parent="."]
 

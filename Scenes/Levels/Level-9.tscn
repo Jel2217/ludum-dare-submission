@@ -67,17 +67,30 @@ script = ExtResource( 7 )
 
 [node name="Spawner2" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 301.663, 108.04 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 2
+red_slime_amount = 2
 
 [node name="Spawner3" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 299.773, -213.24 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 2
+red_slime_amount = 2
 
 [node name="Spawner1" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 1182.35, -53.2298 )
+waves = 2
+blue_slime_amount = 2
+green_slime_amount = 2
+purple_slime_amount = 2
+red_slime_amount = 2
 
 [node name="BossSpawner" parent="Level" instance=ExtResource( 10 )]
 position = Vector2( 1594.16, 21.494 )
 blue_slime_amount = 0
-purple_slime_amount = 1
+red_slime_amount = 1
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
 
