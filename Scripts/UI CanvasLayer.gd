@@ -6,6 +6,8 @@ var empty_heart = preload("res://Images/UI/Hearts/heart3.png")
 var level_file = "user://level.save"
 onready var heart_hbox = $"Heart Hbox"
 
+var pause_menu_open = false
+
 func update_healthbar(value):
 	for i in heart_hbox.get_child_count():
 		if value > i * 2 + 1:
@@ -45,6 +47,25 @@ func load_score():
 		var level = 1
 		return level
 
+func _process(_delta):
+		if Input.is_action_just_pressed("pause"):
+			if pause_menu_open:
+				$XpBar.show()
+				$ColorRect.hide()
+				$VBoxContainer.hide()
+				$VBoxContainer/ResumeButton.disabled = true
+				$VBoxContainer/ReturnButton.disabled = true
+				get_tree().paused = false
+				pause_menu_open = false
+			else:
+				$XpBar.hide()
+				$ColorRect.show()
+				$VBoxContainer.show()
+				$VBoxContainer/ResumeButton.disabled = false
+				$VBoxContainer/ReturnButton.disabled = false
+				get_tree().paused = true
+				pause_menu_open = true
+
 
 func _on_LoseTimer_timeout():
 	get_tree().change_scene("res://Scenes/Lose.tscn")
@@ -52,3 +73,17 @@ func _on_LoseTimer_timeout():
 
 func _on_WinTimer_timeout():
 	get_tree().change_scene("res://Scenes/Win.tscn")
+
+
+func _on_ResumeButton_pressed():
+	$XpBar.show()
+	$ColorRect.hide()
+	$VBoxContainer.hide()
+	$VBoxContainer/ResumeButton.disabled = true
+	$VBoxContainer/ReturnButton.disabled = true
+	get_tree().paused = false
+	pause_menu_open = false
+
+
+func _on_ReturnButton_pressed():
+	get_tree().change_scene("res://Scenes/TitleScreen.tscn")

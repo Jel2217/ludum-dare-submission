@@ -1,10 +1,43 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Images/UI/Hearts/heart1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/UI CanvasLayer.gd" type="Script" id=2]
 [ext_resource path="res://Audio/DefeatedBoss.wav" type="AudioStream" id=3]
+[ext_resource path="res://Font/fontt.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Other Resources/blur.shader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 5 )
+shader_param/blur_amount = 3.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.243137, 0.243137, 0.243137, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.243137, 0.243137, 0.243137, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.392157, 0.392157, 0.392157, 1 )
 
 [node name="UI CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="Heart Hbox" type="HBoxContainer" parent="."]
@@ -86,5 +119,60 @@ one_shot = true
 stream = ExtResource( 3 )
 bus = "SFX"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 1 )
+margin_right = 642.0
+margin_bottom = 361.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 62.5
+margin_top = 100.0
+margin_right = 577.5
+margin_bottom = 231.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 515.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 4 )
+text = "Paused"
+align = 1
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer"]
+margin_top = 61.0
+margin_right = 515.0
+margin_bottom = 118.0
+focus_mode = 0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "Return to main menu"
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "Resume"
+
 [connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
 [connection signal="timeout" from="LoseTimer" to="." method="_on_LoseTimer_timeout"]
+[connection signal="pressed" from="VBoxContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
