@@ -34,5 +34,5 @@ func load_story():
 
 
 func _on_Timer_timeout():
-	AudioServer.set_bus_volume_db(_bus, -5.0)
+	AudioServer.set_bus_volume_db(_bus, -8.0)
 	get_tree().change_scene("res://Scenes/LevelMenu.tscn")

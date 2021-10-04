@@ -20,7 +20,6 @@ func _process(_delta):
 			print("tt")
 			Tmusic.stop()
 			GameMusic.stop()
-		print(get_tree().current_scene.name)
 				
 		
 	

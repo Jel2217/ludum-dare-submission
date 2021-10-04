@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _on_Volume_value_changed(value: float):
 	save_vol(value)
-	AudioServer.set_bus_volume_db(_bus, linear2db(value*2))
+	AudioServer.set_bus_volume_db(_bus, linear2db(value))
 #	$"../../AudioStreamPlayer".volume_db = linear2db(value)
 
 

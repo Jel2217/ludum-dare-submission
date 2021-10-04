@@ -71,7 +71,7 @@ func fire_projectile():
 
 func update_health(value):
 	health = value
-	if health == 0:
+	if health <= 0:
 		$"../UI CanvasLayer".player_lost()
 		hide()
 		dead = true
