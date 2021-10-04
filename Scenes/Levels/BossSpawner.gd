@@ -32,7 +32,6 @@ func _ready():
 
 func _process(delta):
 	if finished:
-		$"../UI CanvasLayer".player_won()
 		return
 		
 	if player_in_room:
@@ -41,6 +40,7 @@ func _process(delta):
 			if current_wave > waves:
 				player_in_room = false
 				finished = true
+				$"../UI CanvasLayer".player_won()
 				set_block_tile_map(false)
 				current_wave = 0
 			else:
