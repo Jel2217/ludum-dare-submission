@@ -21,10 +21,12 @@ height = 9.92657
 [node name="Purple Slime" type="KinematicBody2D" groups=[
 "enemy",
 ]]
+modulate = Color( 2, 1.25, 2, 1 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

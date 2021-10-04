@@ -6,7 +6,7 @@
 [ext_resource path="res://Images/UI/EnemyHealthBar/backgroundbar.png" type="Texture" id=5]
 [ext_resource path="res://Images/Enemies/Red Slime/RedSlimeGun3.png" type="Texture" id=6]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
 
 
@@ -132,7 +132,7 @@ func _on_AttackTimer_timeout():
 		$AttackTimer.start()
 "
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -140,15 +140,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 4.65628
 height = 13.1527
 
 [node name="Red_Slime" type="KinematicBody2D" groups=[
 "enemy",
 ]]
+modulate = Color( 2, 1.25, 1.25, 1 )
 collision_layer = 2
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2( 0, 5.6 )
@@ -161,14 +162,13 @@ texture = ExtResource( 6 )
 position = Vector2( 8, -0.5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
-frame = 1
+frames = SubResource( 2 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.40458, 7.67781 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -12.0

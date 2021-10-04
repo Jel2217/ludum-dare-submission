@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/Player/playeranim4.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Images/Player/playeranim2.png" type="Texture" id=5]
 [ext_resource path="res://Images/Player/laser_sword.png" type="Texture" id=6]
 [ext_resource path="res://Audio/Hurt.wav" type="AudioStream" id=7]
+[ext_resource path="res://Images/spot.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -53,3 +54,17 @@ position = Vector2( 0, 17 )
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 bus = "SFX"
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 7, 7 )
+texture = ExtResource( 8 )
+color = Color( 1, 0.541176, 0, 1 )
+energy = 0.75
+range_height = 200.0
+range_z_min = -200
+range_z_max = 200
+range_layer_max = 10
+shadow_color = Color( 0.266667, 0.160784, 0, 0 )
+shadow_gradient_length = 50.0
+shadow_filter = 5
+shadow_filter_smooth = 13.0
