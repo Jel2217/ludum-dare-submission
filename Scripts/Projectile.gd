@@ -11,9 +11,9 @@ func _physics_process(delta):
 func _on_Projectile_body_entered(body):
 	if body.is_in_group("player"): return
 	if body.is_in_group("enemy"):
-		if body.health-25 <= 0:
-			body.update_health(body.health - player.damage)
+		if body.health - player.damage <= 5:
+			body.update_health(0)
 			player.enemy_hit()
 		else:
-			body.update_health(body.health - 25)
+			body.update_health(body.health - player.damage)
 	queue_free()

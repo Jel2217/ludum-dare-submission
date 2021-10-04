@@ -12,7 +12,8 @@ var fire_delay = 0.25
 var velocity = Vector2.ZERO
 onready var sprite = $AnimatedSprite
 onready var sword = $Pivot/laser_sword 
-onready var xp = get_parent().get_node("UI CanvasLayer/Control2")
+onready var xp = get_parent().get_node("UI CanvasLayer/XpBar")
+
 var projectile = preload("res://Scenes/Projectile.tscn")
 var damage = 20
 var bspeed = 700

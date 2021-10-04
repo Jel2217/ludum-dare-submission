@@ -54,7 +54,7 @@ position = Vector2( 140, 0 )
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
 
-[node name="Control2" parent="Level/UI CanvasLayer" instance=ExtResource( 3 )]
+[node name="XpBar" parent="Level/UI CanvasLayer" instance=ExtResource( 3 )]
 margin_top = 15.0
 margin_bottom = 15.0
 
