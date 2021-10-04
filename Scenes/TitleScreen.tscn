@@ -58,7 +58,7 @@ bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 [sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.360784, 0.360784, 0.360784, 1 )
 
-[sub_resource type="GDScript" id=26]
+[sub_resource type="GDScript" id=21]
 script/source = "extends HSlider
 
 
@@ -76,7 +76,7 @@ func _ready() -> void:
 
 func _on_Volume_value_changed(value: float):
 	save_vol(value)
-	AudioServer.set_bus_volume_db(_bus, linear2db(value*2))
+	AudioServer.set_bus_volume_db(_bus, linear2db(value))
 #	$\"../../AudioStreamPlayer\".volume_db = linear2db(value)
 
 
@@ -101,17 +101,17 @@ func load_vol():
 		return volume
 "
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="StyleBoxFlat" id=22]
 bg_color = Color( 0.392157, 0.0862745, 0.0862745, 1 )
 
-[sub_resource type="StyleBoxFlat" id=22]
+[sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0.596078, 0.0666667, 0.0666667, 1 )
-
-[sub_resource type="StyleBoxEmpty" id=23]
 
 [sub_resource type="StyleBoxEmpty" id=24]
 
-[sub_resource type="StyleBoxFlat" id=25]
+[sub_resource type="StyleBoxEmpty" id=25]
+
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 0.815686, 0.235294, 0.235294, 1 )
 
 [node name="TitleScreen" type="Control"]
@@ -219,10 +219,10 @@ margin_bottom = 138.0
 custom_icons/grabber_disabled = ExtResource( 5 )
 custom_icons/grabber_highlight = ExtResource( 5 )
 custom_icons/grabber = ExtResource( 5 )
-max_value = 1.0
+max_value = 0.6
 step = 0.05
-value = 1.0
-script = SubResource( 26 )
+value = 0.6
+script = SubResource( 21 )
 
 [node name="Volume Label2" type="Label" parent="Settings"]
 margin_top = 122.0
@@ -249,11 +249,11 @@ margin_top = 162.0
 margin_right = 480.0
 margin_bottom = 219.0
 focus_mode = 0
-custom_styles/hover = SubResource( 21 )
-custom_styles/pressed = SubResource( 22 )
-custom_styles/focus = SubResource( 23 )
-custom_styles/disabled = SubResource( 24 )
-custom_styles/normal = SubResource( 25 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/focus = SubResource( 24 )
+custom_styles/disabled = SubResource( 25 )
+custom_styles/normal = SubResource( 26 )
 custom_fonts/font = ExtResource( 1 )
 enabled_focus_mode = 0
 text = "Back"
