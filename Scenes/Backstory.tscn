@@ -93,7 +93,7 @@ BE WARNED, When these slimes escaped, one attacked you,
 and the world started to feel a little UNSTABLE"
 align = 1
 valign = 1
-percent_visible = 0.793774
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
