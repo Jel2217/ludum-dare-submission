@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Images/UI/Conveyor Belt/Conveyer1.png" type="Texture" id=1]
 [ext_resource path="res://Images/UI/Conveyor Belt/Conveyer2.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UIOverlay.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/GlitchFX.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Images/UI/Conveyor Belt/Conveyor4.png" type="Texture" id=5]
+[ext_resource path="res://Images/UI/Conveyor Belt/Conveyor6.png" type="Texture" id=6]
+[ext_resource path="res://Images/UI/Conveyor Belt/Conveyor3.png" type="Texture" id=7]
+[ext_resource path="res://Images/UI/Conveyor Belt/Conveyor5.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -42,10 +46,10 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/CanvasLayer"]
 show_behind_parent = true
-position = Vector2( 320.212, 14.8624 )
-scale = Vector2( 2.00039, 1.34262 )
+position = Vector2( 320.212, 30 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Glitches" type="Control" parent="MarginContainer/VBoxContainer/CanvasLayer/AnimatedSprite"]
