@@ -69,25 +69,25 @@ __meta__ = {
 }
 
 [node name="Space" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox"]
-margin_left = 5.0
+margin_left = 45.0
 margin_right = 521.0
 margin_bottom = 210.0
 custom_constants/margin_right = 194
 
 [node name="LevelGrid" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space" instance=ExtResource( 6 )]
-margin_right = 322.0
+margin_right = 282.0
 
 [node name="Space2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox"]
 margin_left = 525.0
-margin_right = 847.0
+margin_right = 807.0
 margin_bottom = 210.0
 
 [node name="This node does nothing, but without it everything breaks" type="Control" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space2"]
-margin_right = 322.0
+margin_right = 282.0
 margin_bottom = 210.0
 
 [node name="LevelGrid2" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox/Space2" instance=ExtResource( 6 )]
-margin_right = 322.0
+margin_right = 282.0
 
 [node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 visible = false

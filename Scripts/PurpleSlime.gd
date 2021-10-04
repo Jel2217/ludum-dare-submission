@@ -15,8 +15,8 @@ var dead = false
 
 var move_speed = 8000
 var speed = 150
-onready var nav =  get_node("/root/Control/Level/Navigation2D")
-onready var player =  get_node("/root/Control/Level/Player")
+onready var nav =  get_node("../Navigation2D")
+onready var player =  get_node("../Player")
 var path
 var points
 var points_index = 0

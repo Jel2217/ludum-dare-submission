@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/DefiniteShot.wav-baf42f9fdee19b585759ca7ab8178981.sample"
+path="res://.import/DefeatedBoss.wav-f1fe8f84b1d7ecedfe39b7e00418880b.sample"
 
 [deps]
 
-source_file="res://Audio/DefiniteShot.wav"
-dest_files=[ "res://.import/DefiniteShot.wav-baf42f9fdee19b585759ca7ab8178981.sample" ]
+source_file="res://Audio/DefeatedBoss.wav"
+dest_files=[ "res://.import/DefeatedBoss.wav-f1fe8f84b1d7ecedfe39b7e00418880b.sample" ]
 
 [params]
 

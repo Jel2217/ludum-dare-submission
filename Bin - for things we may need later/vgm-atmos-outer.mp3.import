@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/vgm-atmos-outer.mp3-fbbf554f5d0775089a8382730df01e6f.mp3str"
+
+[deps]
+
+source_file="res://Bin - for things we may need later/vgm-atmos-outer.mp3"
+dest_files=[ "res://.import/vgm-atmos-outer.mp3-fbbf554f5d0775089a8382730df01e6f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/DefiniteHit.wav-9f3950f07f191ec04692d59bc5c57fd3.sample"
+path="res://.import/SlimeShoot.wav-5e68a5c480dd596f4ce0e2e20d3f070c.sample"
 
 [deps]
 
-source_file="res://Audio/DefiniteHit.wav"
-dest_files=[ "res://.import/DefiniteHit.wav-9f3950f07f191ec04692d59bc5c57fd3.sample" ]
+source_file="res://Audio/SlimeShoot.wav"
+dest_files=[ "res://.import/SlimeShoot.wav-5e68a5c480dd596f4ce0e2e20d3f070c.sample" ]
 
 [params]
 
