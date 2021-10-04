@@ -1,8 +1,7 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Font/fontt.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=2]
-[ext_resource path="res://Audio/vgm-atmos-outer.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/VolumeSlider.gd" type="Script" id=4]
 [ext_resource path="res://Images/UI/Knob 16x16.png" type="Texture" id=5]
 [ext_resource path="res://Font/TitleFont.tres" type="DynamicFont" id=6]
@@ -195,11 +194,6 @@ custom_styles/normal = SubResource( 25 )
 custom_fonts/font = ExtResource( 1 )
 enabled_focus_mode = 0
 text = "Back"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = 0.01
-autoplay = true
 
 [connection signal="pressed" from="Main/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Main/Settings" to="." method="_on_Settings_pressed"]

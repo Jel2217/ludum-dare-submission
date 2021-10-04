@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/joshua-mclean_brink.ogg-abddcb47e17bb10fc17b944654d7a229.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/joshua-mclean_brink.ogg"
+dest_files=[ "res://.import/joshua-mclean_brink.ogg-abddcb47e17bb10fc17b944654d7a229.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

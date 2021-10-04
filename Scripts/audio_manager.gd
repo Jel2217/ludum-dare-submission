@@ -15,6 +15,8 @@ func _ready():
 
 	for i in num_players:
 		var p = AudioStreamPlayer.new()
+		p.volume_db = -6
+		p.bus = "SFX"
 		add_child(p)
 		available.append(p)
 		p.connect("finished", self, "_on_stream_finished", [p])
