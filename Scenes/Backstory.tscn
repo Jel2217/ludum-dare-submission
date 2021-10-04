@@ -100,6 +100,7 @@ __meta__ = {
 
 [node name="Audio" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource( 3 )
+volume_db = -3.219
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 40.0
