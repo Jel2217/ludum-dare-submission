@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/whirlwind.png-afa550f69e49e68edf6c9297c9fd5afc.stex"
+path="res://.import/Card5.png-b412a2bd78e652c3cf0b76ac910a887e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Glitch Cards/whirlwind.png"
-dest_files=[ "res://.import/whirlwind.png-afa550f69e49e68edf6c9297c9fd5afc.stex" ]
+source_file="res://Images/Glitch Cards/Card5.png"
+dest_files=[ "res://.import/Card5.png-b412a2bd78e652c3cf0b76ac910a887e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
