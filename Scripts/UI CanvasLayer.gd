@@ -86,4 +86,5 @@ func _on_ResumeButton_pressed():
 
 
 func _on_ReturnButton_pressed():
-	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	self.visible = false
+	get_parent().get_node("Settings").visible = true
