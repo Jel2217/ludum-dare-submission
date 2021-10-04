@@ -13,34 +13,32 @@ func _ready():
 	randomize()
 	card = round(rand_range(1,glitch_card_num))
 	#TODO - add unknown card feature
-	var img = Image.new()
-	var itex = ImageTexture.new()
+	var img
 	if card == 1:
-		img.load("res://Images/Glitch Cards/Card8.png")
+		img = load("res://Images/Glitch Cards/Card8.png")
 #		img.resize(20,20,0)
 	elif card == 2:
-		img.load("res://Images/Glitch Cards/Card9.png")
+		img = load("res://Images/Glitch Cards/Card9.png")
 #		img.resize(20,20,0)
 	elif card == 3:
-		img.load("res://Images/Glitch Cards/Card6.png")
+		img = load("res://Images/Glitch Cards/Card6.png")
 #		img.resize(20,20,0)
 	elif card == 4:
-		img.load("res://Images/Glitch Cards/Card7.png")
+		img = load("res://Images/Glitch Cards/Card7.png")
 #		img.resize(20,20,0)
 	elif card == 5:
-		img.load("res://Images/Glitch Cards/Card5.png")
+		img = load("res://Images/Glitch Cards/Card5.png")
 #		img.resize(20,20,0)
 	elif card == 6:
-		img.load("res://Images/Glitch Cards/Card3.png")
+		img = load("res://Images/Glitch Cards/Card3.png")
 #		img.resize(20,20,0)
 	elif card == 7:
-		img.load("res://Images/Glitch Cards/Card2.png")
+		img = load("res://Images/Glitch Cards/Card2.png")
 #		img.resize(20,20,0)
 	elif card == 8:
-		img.load("res://Images/Glitch Cards/Card1.png")
+		img = load("res://Images/Glitch Cards/Card1.png")
 #		img.resize(20,20,0)
-	itex.create_from_image(img)
-	card_texture.set_texture(itex)
+	card_texture.texture = img
 	self.play("Conveyer")
 	
 
