@@ -53,8 +53,13 @@ func _process(_delta):
 				$XpBar.show()
 				$ColorRect.hide()
 				$VBoxContainer.hide()
+				$Settings.hide()
 				$VBoxContainer/ResumeButton.disabled = true
 				$VBoxContainer/ReturnButton.disabled = true
+				$Settings/Back.disabled = true
+				$Settings/Fullscreen.disabled = true
+				$Settings/Volume.editable = false
+				$Settings/Volume2.editable = false
 				get_tree().paused = false
 				pause_menu_open = false
 			else:
@@ -63,6 +68,10 @@ func _process(_delta):
 				$VBoxContainer.show()
 				$VBoxContainer/ResumeButton.disabled = false
 				$VBoxContainer/ReturnButton.disabled = false
+				$Settings/Back.disabled = false
+				$Settings/Fullscreen.disabled = false
+				$Settings/Volume.editable = true
+				$Settings/Volume2.editable = true
 				get_tree().paused = true
 				pause_menu_open = true
 
@@ -86,5 +95,5 @@ func _on_ResumeButton_pressed():
 
 
 func _on_ReturnButton_pressed():
-	self.visible = false
-	get_parent().get_node("Settings").visible = true
+	$VBoxContainer.hide()
+	$Settings.show()
