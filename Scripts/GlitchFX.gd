@@ -66,7 +66,7 @@ func generate_random_pos():
 	return Vector2(x_pos, y_pos)
 
 func fat():
-	player.speed = 50
+	player.speed = player.speed - 100
 	$FatTimer.start()
 
 func _on_InvisTimer_timeout():
@@ -74,7 +74,7 @@ func _on_InvisTimer_timeout():
 
 
 func _on_FatTimer_timeout():
-	player.speed = 150
+	player.speed = player.speed + 100
 
 func heal():
 	player.update_health(player.health + 2)
