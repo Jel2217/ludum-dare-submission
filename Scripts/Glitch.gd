@@ -59,7 +59,7 @@ func _on_Timer_timeout():
 		elif card == 3:
 			glitch_fx.invis()
 		elif card == 4:
-			var effect = round(rand_range(1,3))
+			var effect = floor(rand_range(1,3))
 			if effect == 1:
 				glitch_fx.invert()
 			elif effect == 2:
