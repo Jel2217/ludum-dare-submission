@@ -15,7 +15,8 @@
 script/source = "extends Node2D
 
 
-var level = 7"
+var level = 7
+"
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 671.03, -61.8478, 671.03, 47.0467, 670.323, 109.272, 496.374, 110.686, 497.082, 45.6324, 498.496, 1.08471, -62.181, 62.4227, -61.5136, -62.0511, 63.9613, -63.3859, 63.6276, 1.02011, 62.4548, 62.038, 63.6276, 46.4047, 211.46, 46.071, 211.461, 1.02011, 382.197, 1.61518, 382.108, 47.056, 499.203, -63.9691, 1321.92, 214.014, 1478.72, 211.341, 1480.5, 377.049, 1321.03, 377.049, 1004.72, 650.746, 1287.28, 650.746, 1288.86, 934.891, 1004.72, 933.303 )
@@ -77,13 +78,14 @@ margin_bottom = -91.3138
 
 [node name="Spawner2" parent="Level" instance=ExtResource( 10 )]
 position = Vector2( 505.237, -53.2613 )
-blue_slime_amount = 0
-green_slime_amount = 2
+waves = 2
+blue_slime_amount = 2
+green_slime_amount = 3
 
 [node name="Spawner1" parent="Level" instance=ExtResource( 10 )]
 position = Vector2( 1321.67, 217.622 )
 blue_slime_amount = 0
-green_slime_amount = 2
+green_slime_amount = 6
 
 [node name="BossSpawner" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 1146.65, 792.839 )

@@ -75,18 +75,34 @@ position = Vector2( 903.485, 23.6724 )
 
 [node name="Spawner2" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 472.589, -54.8475 )
+waves = 2
+blue_slime_amount = 2
+green_slime_amount = 2
+purple_slime_amount = 4
 
 [node name="Spawner1" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 186.595, -53.9036 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 2
 
 [node name="Spawner3" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 186.595, 216.044 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 3
 
 [node name="Spawner5" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 475.42, 459.564 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 4
 
 [node name="Spawner4" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 471.645, 217.932 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 4
 
 [node name="ShaderPos" type="Position2D" parent="."]
 visible = false

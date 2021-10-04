@@ -14,7 +14,8 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-var level = 4"
+var level = 4
+"
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( -62.181, 62.4227, -61.5136, -62.0511, 63.9613, -63.3859, 63.6276, 1.02011, 62.4548, 62.038, 63.6276, 46.4047, 302, 106, 456, 105, 457, 265, 303, 265, 299, -212, 455, -212, 455, -64, 300, -59, 1180.43, -54, 1337.43, -52, 1340.43, 103, 1180.43, 100, 1452.43, -122, 1733.43, -121, 1732.43, 163, 1451.43, 162 )
@@ -67,17 +68,30 @@ script = ExtResource( 7 )
 
 [node name="Spawner2" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 301.663, 108.04 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 2
+red_slime_amount = 2
 
 [node name="Spawner3" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 299.773, -213.24 )
+blue_slime_amount = 1
+green_slime_amount = 1
+purple_slime_amount = 2
+red_slime_amount = 2
 
 [node name="Spawner1" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 1182.35, -53.2298 )
+waves = 2
+blue_slime_amount = 2
+green_slime_amount = 2
+purple_slime_amount = 2
+red_slime_amount = 2
 
 [node name="BossSpawner" parent="Level" instance=ExtResource( 10 )]
 position = Vector2( 1594.16, 21.494 )
 blue_slime_amount = 0
-purple_slime_amount = 1
+red_slime_amount = 1
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
 

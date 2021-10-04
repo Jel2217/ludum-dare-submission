@@ -41,7 +41,10 @@ func _on_NextButton_pressed():
 				0.5, Tween.TRANS_BACK, Tween.EASE_OUT)
 		tween.start()
 	
-
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.scancode == KEY_ESCAPE:
+			get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 
 func _on_LevelGrid_level_selected(level):
 	select_level(level)
