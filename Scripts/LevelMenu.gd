@@ -52,6 +52,7 @@ func _on_LevelGrid2_level_selected(level):
 	
 func select_level(level):
 	if level <= 15:
+		AudioStreamManager.play("res://Audio/Select.wav")
 		var l = String(level)
 		get_tree().change_scene("res://Scenes/Levels/Level-"+l+".tscn")
 

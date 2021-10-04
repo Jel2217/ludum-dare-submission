@@ -8,9 +8,6 @@ func _ready():
 
 func _process(_delta):
 	if ready:
-		print("1:" + String(get_tree().current_scene.name == "TitleScreen"))
-		print("2:" + String(get_tree().current_scene.name == "LevelMenu"))
-		
 		if !((get_tree().current_scene.name == "TitleScreen") or (get_tree().current_scene.name == "LevelMenu")):
 			if(!GameMusic.playing):
 				Tmusic.stop()

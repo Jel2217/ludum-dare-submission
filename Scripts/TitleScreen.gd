@@ -33,7 +33,7 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 func _on_Settings_pressed():
-	AudioStreamManager.play("res://Audio/GetAPowerUp.wav")
+	AudioStreamManager.play("res://Audio/Select.wav")
 	main.visible = false
 	for child in main.get_children(): # Make sure they cannot be clicked in background
 		if child is Button: child.disabled = true
@@ -43,12 +43,13 @@ func _on_Settings_pressed():
 		elif child is HSlider: child.editable = true
 
 func _on_Play_pressed():
+	AudioStreamManager.play("res://Audio/Select.wav")
 	get_tree().change_scene("res://Scenes/Backstory.tscn")
 	pass
 
 # Settings screen calls
 func _on_Back_pressed():
-	AudioStreamManager.play("res://Audio/GetAPowerUp.wav")
+	AudioStreamManager.play("res://Audio/Select.wav")
 	main.visible = true
 	for child in main.get_children(): # Make sure they cannot be clicked in background
 		if child is Button: child.disabled = false
@@ -58,7 +59,7 @@ func _on_Back_pressed():
 		elif child is HSlider: child.editable = false
 
 func _on_Fullscreen_pressed():
-	AudioStreamManager.play("res://Audio/GetAPowerUp.wav")
+	AudioStreamManager.play("res://Audio/Select.wav")
 	save_fs(!is_fullscreen)
 	toggle_fullscreen()
 	
