@@ -1,6 +1,6 @@
 extends Control
 
-var level = 0
+var level = 1
 var experience = 0
 var level_up_xp = 100
 onready var player = get_parent().get_parent().get_node("Player")
@@ -24,7 +24,7 @@ func on_enemy_killed():
 	
 func on_level_up():
 	level = level + 1
-	level_up_xp = (3^level)+10
+	level_up_xp = (3^level)+0
 	experience = 0
 	text.text = level.to_string()
 	bar.max_value = level_up_xp
