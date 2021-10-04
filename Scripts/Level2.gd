@@ -1,3 +1,3 @@
 extends Node2D
 
-var level = 2
+var level = 12

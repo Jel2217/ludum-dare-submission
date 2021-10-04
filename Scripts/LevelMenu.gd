@@ -51,7 +51,7 @@ func _on_LevelGrid2_level_selected(level):
 	select_level(level)
 	
 func select_level(level):
-	if level <= 5 :
+	if level <= 15:
 		var l = String(level)
 		get_tree().change_scene("res://Scenes/Levels/Level-"+l+".tscn")
 

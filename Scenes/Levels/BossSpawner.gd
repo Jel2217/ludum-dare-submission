@@ -73,5 +73,7 @@ func spawn_boss(enemy):
 	var i = enemy.instance()
 	i.scale.x = 5
 	i.scale.y = 5
+	i.max_health = 1000
+	i.health = 1000
 	$"../".add_child(i)
 	i.position = position
