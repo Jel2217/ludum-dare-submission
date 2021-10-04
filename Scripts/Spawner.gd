@@ -37,6 +37,7 @@ func _process(delta):
 				finished = true
 				set_block_tile_map(false)
 				current_wave = 0
+				$Wave_done.play()
 			else:
 				for i in blue_slime_amount:
 					spawn_enemy(slime_blue)

@@ -76,6 +76,7 @@ func update_health(value):
 		hide()
 		dead = true
 	emit_signal("health", value)
+	$Hurt.play()
 	
 func buff(level):
 	damage = 20 + (2*level)

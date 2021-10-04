@@ -20,6 +20,7 @@ func _on_Player_health(value):
 	update_healthbar(value)
 
 func player_won():
+	$WinAux.play()
 	if load_score() == get_parent().level:
 		save_level(get_parent().level+1)
 	$WinTimer.start()
