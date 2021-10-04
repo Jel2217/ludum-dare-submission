@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Other Resources/PurpleBlockTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Experience bar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UIOverlay.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI CanvasLayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GlitchFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
@@ -61,6 +63,10 @@ smoothing_enabled = true
 script = ExtResource( 7 )
 
 [node name="UI CanvasLayer" parent="Level" instance=ExtResource( 5 )]
+
+[node name="XpBar" parent="Level/UI CanvasLayer" instance=ExtResource( 3 )]
+
+[node name="Control" parent="Level" instance=ExtResource( 4 )]
 
 [node name="Spawner" type="Area2D" parent="Level"]
 position = Vector2( 218.7, -54.2038 )

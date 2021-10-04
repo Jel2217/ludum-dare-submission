@@ -106,6 +106,7 @@ one_shot = true
 
 [node name="FatTimer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 
 [node name="ScreenTimer" type="Timer" parent="."]
 wait_time = 10.0

@@ -78,9 +78,9 @@ func update_health(value):
 	emit_signal("health", value)
 	
 func buff(level):
-	damage = damage + 2
-	speed = speed + 10
-	bspeed = bspeed + 25
+	damage = 20 + (2*level)
+	speed = 150 + (10*level)
+	bspeed = 700 + (25*level)
 	
 func enemy_hit():
 	xp.on_enemy_killed()
