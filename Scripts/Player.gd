@@ -14,7 +14,8 @@ onready var sprite = $AnimatedSprite
 onready var sword = $Pivot/laser_sword 
 onready var xp = get_parent().get_node("UI CanvasLayer/Control2")
 var projectile = preload("res://Scenes/Projectile.tscn")
-
+var damage = 20
+var bspeed = 700
 
 var max_health = 20
 var health = 20
@@ -76,7 +77,9 @@ func update_health(value):
 	emit_signal("health", value)
 	
 func buff(level):
-	pass
+	damage = damage + 2
+	speed = speed + 10
+	bspeed = bspeed + 25
 	
 func enemy_hit():
 	xp.on_enemy_killed()
