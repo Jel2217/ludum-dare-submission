@@ -10,9 +10,13 @@
 [ext_resource path="res://Other Resources/Blocks.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/BossSpawner.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scripts/Level.gd" type="Script" id=11]
 
-[sub_resource type="NavigationPolygon" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var level = 9"
+
+[sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( -62.181, 62.4227, -61.5136, -62.0511, 63.9613, -63.3859, 63.6276, 1.02011, 62.4548, 62.038, 63.6276, 46.4047, 302, 106, 456, 105, 457, 265, 303, 265, 299, -212, 455, -212, 455, -64, 300, -59, 1180.43, -54, 1337.43, -52, 1340.43, 103, 1180.43, 100, 1452.43, -122, 1733.43, -121, 1732.43, 163, 1451.43, 162 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 4, 3, 5 ), PoolIntArray( 6, 7, 8, 9 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 18, 19, 20, 21 ) ]
 outlines = [ PoolVector2Array( -61.5136, -62.0511, -62.181, 62.4227, 62.4548, 62.038, 63.6276, 46.4047, 63.6276, 1.02011, 63.9613, -63.3859 ), PoolVector2Array( 302, 106, 456, 105, 457, 265, 303, 265 ), PoolVector2Array( 299, -212, 455, -212, 455, -64, 300, -59 ), PoolVector2Array( 1180.43, -54, 1337.43, -52, 1340.43, 103, 1180.43, 100 ), PoolVector2Array( 1452.43, -122, 1733.43, -121, 1732.43, 163, 1451.43, 162 ) ]
@@ -26,7 +30,7 @@ __meta__ = {
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( 160, 90 )
-script = ExtResource( 11 )
+script = SubResource( 1 )
 
 [node name="LevelTileMap" type="TileMap" parent="Level"]
 position = Vector2( 1, 0 )
@@ -48,7 +52,7 @@ visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Level/Navigation2D"]
 visible = false
-navpoly = SubResource( 1 )
+navpoly = SubResource( 2 )
 
 [node name="Player" parent="Level" instance=ExtResource( 2 )]
 collision_layer = 3

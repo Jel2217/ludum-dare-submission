@@ -35,6 +35,10 @@ var activated_by_glitch = false
 
 func _ready():
 	healthbar.hide()
+	if $"../Level".level > 5:
+		max_health *= 3
+	if $"../Level".level > 10:
+		max_health *= 6
 	health = max_health
 	healthbar.max_value = max_health
 
