@@ -16,29 +16,29 @@ func _ready():
 	var img = Image.new()
 	var itex = ImageTexture.new()
 	if card == 1:
-		img.load("res://Images/Glitch Cards/corner-explosion.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card8.png")
+#		img.resize(20,20,0)
 	elif card == 2:
-		img.load("res://Images/Glitch Cards/fat.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card9.png")
+#		img.resize(20,20,0)
 	elif card == 3:
-		img.load("res://Images/Glitch Cards/hooded-figure.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card6.png")
+#		img.resize(20,20,0)
 	elif card == 4:
-		img.load("res://Images/Glitch Cards/pc.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card7.png")
+#		img.resize(20,20,0)
 	elif card == 5:
-		img.load("res://Images/Glitch Cards/heart-plus.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card5.png")
+#		img.resize(20,20,0)
 	elif card == 6:
-		img.load("res://Images/Glitch Cards/heart-minus.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card3.png")
+#		img.resize(20,20,0)
 	elif card == 7:
-		img.load("res://Images/Glitch Cards/whirlwind.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card2.png")
+#		img.resize(20,20,0)
 	elif card == 8:
-		img.load("res://Images/Glitch Cards/wave-crest.png")
-		img.resize(20,20,0)
+		img.load("res://Images/Glitch Cards/Card1.png")
+#		img.resize(20,20,0)
 	itex.create_from_image(img)
 	card_texture.set_texture(itex)
 	self.play("Conveyer")
