@@ -75,10 +75,12 @@ margin_bottom = 29.0
 texture = ExtResource( 1 )
 
 [node name="WinTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
+one_shot = true
 
 [node name="LoseTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
+one_shot = true
 
 [connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
 [connection signal="timeout" from="LoseTimer" to="." method="_on_LoseTimer_timeout"]
